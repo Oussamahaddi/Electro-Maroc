@@ -54,9 +54,9 @@
                     <p>Showing 1-12 of 19 results</p>
                 </div>
                 <!-- all items of shop -->
-                <div class="items flex flex-wrap justify-between gap-6">
+                <div class="items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <!-- product content -->
-                    <div class="product border w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img  w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/desktop/d2.png" alt="" class="w-4/6 h-4/6">
@@ -66,7 +66,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/pc/p2.png" alt="" class="w-4/6 h-4/6">
@@ -76,7 +76,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/controller/c2.png" alt="" class="w-4/6 h-4/6">
@@ -90,7 +90,7 @@
                             <button>ADD TO CART</button>
                         </div>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/mouse/m2.png" alt="" class="w-4/6 h-4/6">
@@ -100,7 +100,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/monitor/m2.png" alt="" class="w-4/6 h-4/6">
@@ -110,7 +110,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/headphone/h2.png" alt="" class="w-4/6 h-4/6">
@@ -120,7 +120,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/keyboard/k2.png" alt="" class="w-4/6 h-4/6">
@@ -130,7 +130,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product  w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/pc/p4.png" alt="" class="w-4/6 h-4/6">
@@ -140,7 +140,7 @@
                         <!-- product price -->
                         <strong>$140.00</strong>
                     </div>
-                    <div class="product w-[calc(90%/3)] flex flex-col items-center gap-px">
+                    <div class="product">
                         <!-- product img -->
                         <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
                             <img src="./img/product/cartmere/cm2.png" alt="" class="w-4/6 h-4/6">
