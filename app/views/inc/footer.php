@@ -1,7 +1,7 @@
 
 
     <footer class="bg-zinc-800 grid place-items-center pt-6 mt-16">
-        <div class="footer_container grid grid-cols-4 place-items-center items-start text-white w-5/6">
+        <div class="footer_container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-start text-white w-5/6">
             <div class="adress">
                 <div class="img mb-4">
                     <img src="" alt="Electro Maroc">
@@ -42,12 +42,12 @@
                 <p class="text-gray-500">Get E-mail updates about our latest shop and special offres.</p>
                 <input type="email" placeholder="Enter your e-mail" class="rounded-md bg-zinc-600 py-1 px-4">
 
-                <div class="social_media flex gap-6">
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-pinterest"></i>
-                    <i class="fa-brands fa-linkedin"></i>
+                <div class="social_media flex gap-6 text-xl">
+                    <i class="fa-brands fa-facebook text-blue-500"></i>
+                    <i class="fa-brands fa-instagram text-pink-600"></i>
+                    <i class="fa-brands fa-twitter text-sky-400"></i>
+                    <i class="fa-brands fa-pinterest text-red-400"></i>
+                    <i class="fa-brands fa-linkedin text-blue-400"></i>
                 </div>
             </div>
         </div>
@@ -57,6 +57,7 @@
 
 
 </body>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
     <script src="js/main.js" type="module"></script>
 </html>

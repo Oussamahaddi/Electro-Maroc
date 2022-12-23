@@ -2,14 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
 
-    .product{
-        @apply flex flex-col items-center gap-px
+@layer components{
+    .product {
+        @apply flex flex-col items-center gap-2 
     }
 
     .footer_li{
-        @apply text-gray-500
+        @apply text-gray-400
     }
 
+    .header_i {
+        @apply bg-red-500 rounded px-4 text-gray-400 hover:bg-zinc-800 hover:text-white ease-linear duration-200
+        
+    }
+
+    .nav_bar{
+        @apply text-white hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer
+    }
 }

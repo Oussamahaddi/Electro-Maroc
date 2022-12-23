@@ -2,218 +2,93 @@
 	include_once APPROOT . '/views/inc/header.php';
 ?>
 
-    <!-- khasni n3ti l body width 90% bach bla manb9a n3awd fiha -->
+<!-- nav bar start -->
+<section class="nav_section bg-s  items-center h-14 w-full flex justify-center">
+    <div class="nav_container h-full w-5/6">
+        <!-- nav list -->
+        <ul class="bg-zinc-800 text-black flex justify-center items-center list-none h-full font-semibold">
+            <li class="h-full"><a href="<?= URLROOT; ?>/Pages/index" class="text-white hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer"> HOME  <i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="h-full"><a href="<?= URLROOT; ?>/Pages/shop" class="text-white hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">SHOP <i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="h-full"><a href="#" class="text-white hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">BLOG </a></li>
+            <li class="h-full"><a href="#" class="nav_bar">CONTACT US </a></li>
+        </ul>
+    </div>
+</section>
+<!-- nav bar end -->
 
-    <!-- header start -->
-    <header class="w-full flex justify-center h-32 relative">
-        <div class="flex w-full items-center justify-between w-5/6">
-            <div class="logo">
-                <img src="" alt="Electro Maroc" width="60px">
-            </div>
-            <div class="recherch_bar flex gap-2 items-center">
-                <input type="recherche" placeholder="Search products" class="rounded-md pl-2 py-1 border"><i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <div class="icons flex items-center gap-4 text-lg">
-                <i class="fa-regular fa-heart hover:text-white trasition-all ease-linear duration-300"></i>
-                <i class="fa-sharp fa-solid fa-bag-shopping hover:text-white trasition-all ease-linear duration-300"></i>
-                <i class="fa-regular fa-user hover:text-white trasition-all ease-linear duration-300"></i>
-            </div>
-        </div>
-    </header>
-    <!-- header end -->
-
-    <hr class="w-5/6 m-auto">
-
-    <!-- nav bar start -->
-    <section class="nav_section items-center h-14 w-full flex justify-center">
-        <div class="nav_container h-full w-5/6">
-            <!-- nav list -->
-            <ul class="flex justify-center items-center list-none bg-yellow-00 h-full text-black font-semibold">
-                <li class="h-full"><a href="#" class="hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer"> HOME  <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="h-full"><a href="#" class="hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">SHOP <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="h-full"><a href="#" class="hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex items-center px-4 cursor-pointer">BLOG </a></li>
-                <li class="h-full"><a href="#" class="hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex items-center px-4 cursor-pointer">CONTACT US </a></li>
-            </ul>
-        </div>
-    </section>
-    <!-- nav bar end -->
-
-    <!-- shop start -->
-    <section class="shop mt-8">
-        <div class="shop_container grid grid-cols-[2fr_14rem] gap-6 w-5/6 m-auto">
-            <div class="shop_items">
-                <!-- sort select width text -->
-                <div class="sort flex gap-12 justify-end mb-8">
-                    <div class="select_box">
-                        <label for="sort">Sort By :</label>
-                        <select name="" id="sort" class="rounded py-1 px-2">
-                            <option value="Categorie">Catégorie</option>
-                            <option value="Prix">Prix</option>
-                        </select>
-                    </div>
-                    <p>Showing 1-12 of 19 results</p>
-                </div>
-                <!-- all items of shop -->
-                <div class="items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    <!-- product content -->
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img  w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/desktop/d2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/pc/p2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/controller/c2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                        <!-- add to product btn -->
-                        <div class="add_btn">
-                            <button>ADD TO CART</button>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/mouse/m2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/monitor/m2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/headphone/h2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/keyboard/k2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/pc/p4.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                    <div class="product">
-                        <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
-                            <img src="./img/product/cartmere/cm2.png" alt="" class="w-4/6 h-4/6">
-                        </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
-                    </div>
-                </div>
-                <!-- pagination  -->
-                <div class="pagination">
-
+<!-- home page start -->
+<section class="sliders w-full flex justify-center">
+    <div class="slider_container w-5/6 grid grid-cols-4 gap-4">
+        <div class="big_img bg-yellow-500 col-span-3 flex relative p-12 ">
+            <div class="flex flex-col gap-4 w-5/6">
+                <p>PC</p>
+                <h1 class=" text-white font-bold text-2xl">
+                    ASUS TUF Gaming F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display,
+                </h1>
+                <p>Ships to Morocco</p>
+                <div class="flex justify-center my-4">
+                    <button class="bg-gray-200 w-fit">SEE DETAIL</button>
                 </div>
             </div>
-            <!-- categorie -->
-            <div class="shop_categorie col-start-2 grid h-fit gap-12">
-                <div class="categorie bg-gray-100 grid gap-y-4 rounded h-fit border">
-                    <h3 class="text-lg font-bold bg-zinc-800 text-white p-2 rounded-t">Categorie</h3>
-                    <ul class="list-none grid gap-y-2 text-gray-500 p-4">
-                        <li class="flex justify-between items-center">Accessoire<i class="fa-solid fa-chevron-down"></i></li><hr>
-                        <li class="flex justify-between items-center">Accessoire<i class="fa-solid fa-chevron-down"></i></li><hr>
-                        <li class="flex justify-between items-center">Accessoire<i class="fa-solid fa-chevron-down"></i></li><hr>
-                        <li class="flex justify-between items-center">Accessoire<i class="fa-solid fa-chevron-down"></i></li><hr>
-                        <li class="flex justify-between items-center">Accessoire<i class="fa-solid fa-chevron-down"></i></li>
-                    </ul>
-                </div>
-                <!-- top product sells -->
-                <div class="best_sells bg-gray-100 grid gap-y-4 rounded h-fit border">
-                    <h3 class="text-lg font-bold bg-zinc-800 text-white p-2 rounded-t">Top Rated Products</h3>
-                    <div class="items_sells flex gap-4 items-center">
-                        <div class="img w-2/6 flex justify-center items-center">
-                            <img src="./img/product/pc/p6.png" alt="" class="w-4/6 h-full">
-                        </div>
-                        <div class="info">
-                            <h4 class="font-semibold">Pc Desktop</h4>
-                            <p class="text-red-600">$600.00</p>
-                        </div>
-                    </div>
-                    <div class="items_sells flex gap-4 items-center">
-                        <div class="img w-2/6 flex justify-center items-center">
-                            <img src="./img/product/monitor/m4.png" alt="" class="w-4/6 h-full">
-                        </div>
-                        <div class="info">
-                            <h4 class="font-semibold">Pc Desktop</h4>
-                            <p class="text-red-600">$600.00</p>
-                        </div>
-                    </div>
-                    <div class="items_sells flex gap-4 items-center">
-                        <div class="img w-2/6 flex justify-center items-center">
-                            <img src="./img/product/mouse/m6.png" alt="" class="w-4/6 h-full">
-                        </div>
-                        <div class="info">
-                            <h4 class="font-semibold">Pc Desktop</h4>
-                            <p class="text-red-600">$600.00</p>
-                        </div>
-                    </div>
-                    <div class="items_sells flex gap-4 items-center">
-                        <div class="img w-2/6 flex justify-center items-center">
-                            <img src="./img/product/desktop/d6.png" alt="" class="w-4/6 h-full">
-                        </div>
-                        <div class="info">
-                            <h4 class="font-semibold">Pc Desktop</h4>
-                            <p class="text-red-600">$600.00</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="absolute w-4/6 ">
+                <img src="<?= URLROOT . '/img/product/pc/p3.png'?>" alt="pc" class="">
+            </div>
+            <div class="absolute bottom-2 right-1/2 my-2 flex gap-4">
+                <span>o</span>
+                <span>o</span>
+                <span>o</span>
             </div>
         </div>
-    </section>
-    <!-- shop end -->
+        <div class="small_img bg-red-500 col-span-1">
+            <div class="img">
+                <img src="<?= URLROOT . '/img/product/mouse/m2.png'?>" alt="pc">
+            </div>
+            <div class="info">
+                <p>PC</p>
+                <h1>
+                    ASUS TUF Gaming F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display, 
+                    Intel Core i5-10300H Processor, GeForce GTX 1650,
+                </h1>
+                <p>Ships to Morocco</p>
+                <button class="">SEE DETAIL</button>
+            </div>
+        </div>
+        <div class="small_img bg-gray-500 col-span-2">
+            <div class="img">
+                <img src="<?= URLROOT . '/img/product/monitor/m2.png'?>" alt="pc">
+            </div>
+            <div class="info">
+                <p>PC</p>
+                <h1>
+                    ASUS TUF Gaming F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display, 
+                    Intel Core i5-10300H Processor, GeForce GTX 1650,
+                </h1>
+                <p>Ships to Morocco</p>
+                <button class="">SEE DETAIL</button>
+            </div>
+        </div>
+        <div class="small_img bg-green-500 col-span-2">
+            <div class="img">
+                <img src="<?= URLROOT . '/img/product/headphone/h2.png'?>" alt="pc">
+            </div>
+            <div class="info">
+                <p>PC</p>
+                <h1>
+                    ASUS TUF Gaming F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display, 
+                    Intel Core i5-10300H Processor, GeForce GTX 1650,
+                </h1>
+                <p>Ships to Morocco</p>
+                <button class="">SEE DETAIL</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
 
 <?php
 	include_once APPROOT . '/views/inc/footer.php';
 ?>
+

@@ -10,8 +10,8 @@
         public function index() {
             $this->view('allPages/index');
         }
-        public function test() {
-            $data = ['test' => 'fukc'];
-            $this->view('allPages/test', $data);
+        public function shop() {
+            $data = [];
+            $this->view('allPages/shop');
         }
     }
