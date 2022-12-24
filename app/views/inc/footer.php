@@ -57,7 +57,6 @@
 
 
 </body>
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
     <script src="js/main.js" type="module"></script>
 </html>

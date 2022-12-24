@@ -13,11 +13,11 @@
     }
 
     .header_i {
-        @apply bg-red-500 rounded px-4 text-gray-400 hover:bg-zinc-800 hover:text-white ease-linear duration-200
+        @apply border border-gray-700 rounded px-2 text-gray-700 hover:bg-zinc-800 hover:text-white ease-linear duration-200
         
     }
 
     .nav_bar{
-        @apply text-white hover:bg-white hover:text-black trasition-all ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer
+        @apply text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer
     }
 }

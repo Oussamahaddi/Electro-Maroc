@@ -10,7 +10,7 @@
 
     <!-- header start -->
     <header class="w-full flex justify-center h-32 relative">
-        <div class="flex w-full items-center justify-between w-5/6">
+        <div class="flex items-center justify-between w-5/6">
             <div class="logo">
                 <img src="<?= URLROOT; ?>/img/admins/" alt="Electro Maroc" class="w-2/4">
             </div>
