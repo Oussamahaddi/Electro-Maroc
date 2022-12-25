@@ -7,10 +7,10 @@
     <div class="nav_container h-full w-5/6">
         <!-- nav list -->
         <ul class="bg-zinc-800 text-black flex justify-center items-center list-none h-full font-semibold">
-            <li class="h-full"><a href="<?= URLROOT; ?>/Pages/index" class="nav_bar gap-2"> HOME  <i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="h-full"><a href="<?= URLROOT; ?>/Pages/index" class="nav_bar gap-2"> Accueil  <i class="fa-solid fa-chevron-down"></i></a></li>
             <li class="h-full"><a href="<?= URLROOT; ?>/Pages/shop" class="nav_bar gap-2">SHOP <i class="fa-solid fa-chevron-down"></i></a></li>
             <li class="h-full"><a href="#" class="nav_bar">BLOG </a></li>
-            <li class="h-full"><a href="#" class="nav_bar">CONTACT US </a></li>
+            <li class="h-full"><a href="<?= URLROOT; ?>/Pages/contact" class="nav_bar">CONTACT US </a></li>
         </ul>
     </div>
 </section>
@@ -100,8 +100,101 @@
         </div>
     </div>
 </section>
+<!-- shipping end -->
 
+<!-- feature start -->
+<section class="w-full flex justify-center">
+    <div class="w-5/6 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div class="col-span-2 flex flex-col gap-8">
+            <div class="">
+                <h2 class="text-lg py-4 w-fit font-bold relative after:content-[''] after:absolute after:bg-green-500 after:w-full after:h-[4px] after:bottom-0 after:left-0">Latest Product</h2>
+                <hr class="border">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+                <div class="flex flex-col items-center py-6 bg-gray-200 cols-span-1">
+                    <img src="<?= URLROOT . '/img/product/desktop/d1.png' ?>" alt="" class="w-3/6">
+                    <p class="w-fit">Desktop</p>
+                    <h4 class="w-fit">Desktop Gamer</h4>
+                    <strong>144.00$</strong>
+                </div>
+                <div class="flex flex-col items-center py-6 bg-gray-200 cols-span-2">
+                    <img src="<?= URLROOT . '/img/product/desktop/d3.png' ?>" alt="" class="w-3/6">
+                    <p class="w-fit">Desktop</p>
+                    <h4 class="w-fit">Desktop Gamer</h4>
+                    <strong>144.00$</strong>
+                </div>
+                <div class="flex flex-col items-center py-6 bg-gray-200 cols-span-3">
+                    <img src="<?= URLROOT . '/img/product/desktop/d2.png' ?>" alt="" class="w-3/6">
+                    <p class="w-fit">Desktop</p>
+                    <h4 class="w-fit">Desktop Gamer</h4>
+                    <strong>144.00$</strong>
+                </div>
+            </div>
+        </div>
+        <div class="w-5/6 h-fit">
+            <div class="mb-4">
+                <h2 class="text-lg py-4 w-fit font-bold relative after:content-[''] after:absolute after:bg-green-500 after:w-full after:h-[4px] after:bottom-0 after:left-0">BestSellers</h2>
+                <hr class="border">
+            </div>
+            <div class="grid grid-cols-1 gap-4 place-items-center grid-rows-3">
+                <div class="flex justify-around gap-4 items-center w-3/5">
+                    <img src="<?= URLROOT; ?>/img/product/monitor/m4.png" alt="" class="w-2/6">
+                    <div class="info">
+                        <h4 class="font-semibold">Pc Desktop</h4>
+                        <p class="text-red-600">$600.00</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-center w-3/5">
+                    <img src="<?= URLROOT; ?>/img/product/mouse/m6.png" alt="" class="w-2/6">
+                    <div class="info w-fit">
+                        <h4 class="font-semibold">Pc Desktop</h4>
+                        <p class="text-red-600">$600.00</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-center w-3/5">
+                    <img src="<?= URLROOT; ?>/img/product/desktop/d6.png" alt="" class="w-2/6 ">
+                    <div class="info">
+                        <h4 class="font-semibold">Pc Desktop</h4>
+                        <p class="text-red-600">$600.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- feature end -->
 
+<!-- sponsore start -->
+<section class="w-full flex justify-center my-20">
+    <div class="w-5/6">
+        <hr class="m-0">
+        <div class="flex justify-around items-center gap-8 py-8 bg-slate-100">
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/forbes.png' ?>" alt="sponsore">
+            </div>
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/inc.png' ?>" alt="sponsore">
+            </div>
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/lifehacker.png' ?>" alt="sponsore">
+            </div>
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/nyt.png' ?>" alt="sponsore">
+            </div>
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/tc.png' ?>" alt="sponsore">
+            </div>
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/tnw.png' ?>" alt="sponsore">
+            </div>
+            <div>
+                <img src="<?= URLROOT . '/img/sponsore/usa-today.png' ?>" alt="sponsore">
+            </div>
+        </div>
+        <hr class="m-0">
+    </div>
+</section>
+<!-- sponsore end -->
 
 
 

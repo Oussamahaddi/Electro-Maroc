@@ -20,10 +20,12 @@
             <div class="icons flex items-center gap-4 text-lg">
                 <div class="header_i"> <i class="fa-regular fa-heart"></i></div>
                 <div class="header_i"><i class="fa-sharp fa-solid fa-bag-shopping"></i></div>
-                <div class="header_i"><i class="fa-regular fa-user"></i></div>
+                <div class="header_i"><a href="<?= URLROOT . '/Authentification/login' ?>"> <i class="fa-regular fa-user"></i></a></div>
             </div>
         </div>
     </header>
     <!-- header end -->
+
+
 
     <hr class="w-5/6 mx-auto">

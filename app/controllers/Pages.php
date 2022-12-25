@@ -14,4 +14,7 @@
             $data = [];
             $this->view('allPages/shop');
         }
+        public function contact() {
+            $this->view('allPages/contact');
+        }
     }
