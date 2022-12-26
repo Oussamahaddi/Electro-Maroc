@@ -19,22 +19,22 @@
             <div class="customer">
                 <h3 class="mb-4">Customer Care</h3>
                 <ul class="grid gap-1.5">
-                    <li class="footer_li"><a href="#"> Monitor</a></li>
-                    <li class="footer_li"><a href="#"> Cart Mere</a></li>
-                    <li class="footer_li"><a href="#"> Desktop</a></li>
-                    <li class="footer_li"><a href="#"> PC</a></li>
-                    <li class="footer_li"><a href="#"> Mouses</a></li>
-                    <li class="footer_li"><a href="#"> Phones</a></li>
+                    <li class="text-gray-400"><a href="#"> Monitor</a></li>
+                    <li class="text-gray-400"><a href="#"> Cart Mere</a></li>
+                    <li class="text-gray-400"><a href="#"> Desktop</a></li>
+                    <li class="text-gray-400"><a href="#"> PC</a></li>
+                    <li class="text-gray-400"><a href="#"> Mouses</a></li>
+                    <li class="text-gray-400"><a href="#"> Phones</a></li>
                 </ul>
             </div>
             <div class="information">
                 <h3 class="mb-4">Information</h3>
                 <ul class="grid gap-2">
-                    <li class="footer_li"><a href="#">About Us</a></li>
-                    <li class="footer_li"><a href="#">Contact Us</a></li>
-                    <li class="footer_li"><a href="#">My Order</a></li>
-                    <li class="footer_li"><a href="#">Terms & Conditions</a></li>
-                    <li class="footer_li">Return & Exchanges</a></li>
+                    <li class="text-gray-400"><a href="#">About Us</a></li>
+                    <li class="text-gray-400"><a href="#">Contact Us</a></li>
+                    <li class="text-gray-400"><a href="#">My Order</a></li>
+                    <li class="text-gray-400"><a href="#">Terms & Conditions</a></li>
+                    <li class="text-gray-400">Return & Exchanges</a></li>
                 </ul>
             </div>
             <div class="join_us grid gap-4">
@@ -57,6 +57,7 @@
 
 
 </body>
+    <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
     <script src="js/main.js" type="module"></script>
 </html>

@@ -23,6 +23,8 @@
             }
         }
 
+
+        // check if email already existe when trying to registre
         public function findClientByEmail($email) {
             $this->db->query("SELECT * FROM client WHERE email = :email");
             $this->db->bind(':email', $email);
@@ -31,6 +33,21 @@
 
             if ($this->db->rowCount() > 0) {
                 return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function checkClient($email, $password) {
+            $this->db->query("SELECT * FROM client WHERE email = :email AND password = :password");
+            $this->db->bind(":email", $email);
+            $this->db->bind(":password", $password);
+
+            $row = $this->db->single();
+
+            // check row
+            if ($this->db->rowCount() > 0) {
+                return $row;
             } else {
                 return false;
             }

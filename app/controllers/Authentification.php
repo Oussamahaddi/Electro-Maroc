@@ -14,6 +14,7 @@
         }
 
 
+        ////////////////////////////////////////////// Registre method \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         public function registre() {
             
             $this->clientModel = $this->model('client');
@@ -75,7 +76,7 @@
 
                     // Register User
                     if($this->clientModel->setClient($data)){
-                        
+
                         redirect('Authentification/login');
                     } else {
                         die('Something went wrong');
@@ -104,9 +105,12 @@
             }
         }
 
+
+        ////////////////////////////////////////////// login method \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         public function login() {
 
             $this->admModule = $this->model('Admin');
+            $this->clientModel = $this->model('Client');
 
             // check for post
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -135,18 +139,21 @@
                 // check if there is no erreur
                 if (empty($data['Email_err']) && empty($data['Password_err'])) {
                     // check for validate email
-                    $loginCheck = $this->admModule->checkAdmin($data['Email'], $data['Password']);
-                    if ($loginCheck) {
+                    $loginAdmCechk = $this->admModule->checkAdmin($data['Email'], $data['Password']);
+                    $loginClientCheck = $this->clientModel->checkClient($data['Email'], $data['Password']);
+
+                    if ($loginAdmCechk) {
                         // create session
-                        $this->createAdminSession($loginCheck);
-                        die("SUCEE");
+                        $this->createSession($loginAdmCechk);
+                    } else if ($loginClientCheck) {
+                        // if not admin
+                        $this->createSession($loginClientCheck);
                     } else {
-                        // if not found
                         $data['Email_Password_err'] = 'Email or Password incorrect !!!';
                         $this->view('log/login', $data);
                     }
                 } else {
-                    // load view page width error
+                    // load view page with error
                     $this->view('log/login', $data);
                 }
 
@@ -167,11 +174,22 @@
         }
 
 
-        
+        public function createSession($unkown) {
+            // create session of admin and client
+            $_SESSION['Email'] = $unkown->email;
+            $_SESSION['name'] = $unkown->full_name;
+            if ($_SESSION['Email'] == 'oussama@gmail.com') {
+                die('it me admin');
+            } else {
+                redirect('Pages/contact');
+            }
+        }
 
-        public function createAdminSession($admin) {
-            $_SESSION['Email'] = $admin->email;
-            redirect('Pages/shop');
+
+        public function logOutAdmin() {
+            unset($_SESSION['Email']);
+            session_destroy();
+            redirect('allPages/index');
         }
 
     }

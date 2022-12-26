@@ -7,10 +7,10 @@
         <div class="nav_container h-full w-5/6">
             <!-- nav list -->
             <ul class="bg-zinc-800 flex justify-center items-center list-none h-full text-black font-semibold">
-                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/index" class="nav_bar"> HOME <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/shop" class="nav_bar">SHOP <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="h-full"><a href="#" class="nav_bar">BLOG </a></li>
-                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/contact" class="nav_bar">CONTACT US </a></li>
+                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/index" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer"> HOME <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/shop" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">SHOP <i class="fa-solid fa-chevron-down"></i></a></li>
+                <li class="h-full"><a href="#" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">BLOG </a></li>
+                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/contact" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">CONTACT US </a></li>
             </ul>
         </div>
     </section>
