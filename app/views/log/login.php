@@ -5,63 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?= URLROOT . '/dist/output.css' ?>">
-    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Registre</title>
 </head>
 <body>
-    <section class="h-screen w-5/6 m-auto">
-        <div class="container px-6 py-12 h-full">
-            <div class="w-fit flex items-center gap-2">
-                <a href="<?= URLROOT . '/Pages/index' ?>" class="flex gap-2 items-center text-gray-600 "><i class="fa-solid fa-arrow-left-long"></i> Back To Home</a>
-            </div>
-            <div class="flex flex-col md:flex-row lg:flex-row justify-center items-center  h-full g-6 text-gray-800 ">
-                <div class="w-4/6 hidden sm:hidden md:block lg:block">
-                    <img src="<?= URLROOT . '/img/draw2.webp' ?>" alt="">
-                </div>
-                <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
-                    <form action="<?= URLROOT . '/Authentification/login' ?>" method="POST">
-                        <!-- Email input -->
-                        <div class="mb-6 grid gap-2">
-                            <label for="examplecheck3" class="text-lg font-semibold">Email</label>
-                            <input type="email" name="Email" value="<?= $data['Email'] ?>" class="mb-0 form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Email address"/>
-                            <!-- error message if email empty or not found -->
-                            <span class="text-red-500"><?php echo $data['Password_err'] ?></span>
-                        </div>
 
-                        <!-- Password input -->
-                        <div class="mb-6 grid gap-2">
-                            <label for="examplecheck3" class="text-lg font-semibold">Password</label>
-                            <input type="password" name="Password" class="mb-0 form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Password"/>
-                            <!-- error message if email empty or not found -->
-                            <span class="text-red-500"><?php echo $data['Password_err'] ?></span>
-                        </div>
-
-                        <!-- Submit button -->
-                        <button
-                            type="submit"
-                            class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
-                            data-mdb-ripple="true"
-                            data-mdb-ripple-color="light"
-                        >
+    <section class="bg-gray-50 dark:bg-gray-900">
+        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
+                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <div class="flex justify-between items-center">
+                        <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                             Login
-                        </button>
+                        </h1>
+                        <a href="<?= URLROOT . '/Pages/index' ?>" class="w-fit py-2 px-4 bg-blue-600 text-white font-medium text-sm rounded-md shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out gap-2 "><i class="fa-solid fa-arrow-left-long"></i> Back To Home</a>
+                    </div>
+                    <form class="space-y-4 md:space-y-6" action="<?= URLROOT . '/Authentification/login' ?>" method="POST">
+                        <div>
+                            <label for="email" class="font-semibold block mb-2 text-sm text-gray-900 ">Your email</label>
+                            <input type="email" name="Email" value="<?php echo $data['Email'] ?>" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " placeholder="name@gmail.com">
 
-                        <div
-                            class="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5"
-                        >
-                            <p class="text-center font-semibold mx-4 mb-0">OR</p>
+                            <!-- error message if email empty or not found -->
+                            <span class="text-red-500"><?php echo $data['Email_err'] ?></span>
                         </div>
 
-                        <a class="px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3" style="background-color: #3b5998" href="#!">
-                            Sign Up
-                        </a>
+                        <div>
+                            <label for="password" class="font-semibold block mb-2 text-sm text-gray-900 ">Password</label>
+                            <input type="password" name="Password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 ">
+
+                            <!-- error message if password empty or not found -->
+                            <span class="text-red-500"><?php echo $data['Password_err'] ?></span>
+                        </div>
+                        <div>
+                            <!-- error message if email and password empty or not found -->
+                            <span class="text-red-500"><?php echo $data['Email_Password_err'] ?></span>
+                        </div>
+
+                        <button type="submit" class="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full">Login</button>
+                        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+                            Don’t have an account yet? <a href="<?= URLROOT . '/Authentification/registre' ?>" class="font-medium text-blue-500 hover:underline">Registre</a>
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+</body>
+    <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
+</html>
 
-<?php
-    include_once APPROOT . '/views/inc/footer.php';
-?>
+
