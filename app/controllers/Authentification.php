@@ -177,11 +177,11 @@
         public function createSession($unkown) {
             // create session of admin and client
             $_SESSION['Email'] = $unkown->email;
-            $_SESSION['name'] = $unkown->full_name;
             if ($_SESSION['Email'] == 'oussama@gmail.com') {
                 die('it me admin');
             } else {
-                redirect('Pages/contact');
+                $_SESSION['name'] = $unkown->full_name;
+                redirect('Pages/index');
             }
         }
 
