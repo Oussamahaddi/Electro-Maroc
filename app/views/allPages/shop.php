@@ -2,27 +2,14 @@
 	include_once APPROOT . '/views/inc/header.php';
 ?>
 
-    <!-- nav bar start -->
-    <section class="nav_section items-center h-14 w-full flex justify-center">
-        <div class="nav_container h-full w-5/6">
-            <!-- nav list -->
-            <ul class="bg-zinc-800 flex justify-center items-center list-none h-full text-black font-semibold">
-                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/index" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer"> HOME <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/shop" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">SHOP <i class="fa-solid fa-chevron-down"></i></a></li>
-                <li class="h-full"><a href="#" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">BLOG </a></li>
-                <li class="h-full"><a href="<?= URLROOT; ?>/Pages/contact" class="text-white hover:bg-white hover:text-black ease-linear duration-300 h-full flex gap-2 items-center px-4 cursor-pointer">CONTACT US </a></li>
-            </ul>
-        </div>
-    </section>
-    <!-- nav bar end -->
 
     <!-- shop start -->
     <section class="shop mt-8">
         <div class="shop_container grid grid-cols-[2fr_14rem] gap-6 w-5/6 m-auto">
             <div class="shop_items">
                 <!-- sort select width text -->
-                <div class="sort flex gap-12 justify-end mb-8">
-                    <div class="select_box">
+                <div class="sort flex gap-10 justify-end mb-8">
+                    <div class=" flex items-center gap-2">
                         <label for="sort">Sort By :</label>
                         <select name="" id="sort" class="rounded py-1 px-2">
                             <option value="Categorie">Catégorie</option>
@@ -32,97 +19,115 @@
                     <p>Showing 1-12 of 19 results</p>
                 </div>
                 <!-- all items of shop -->
-                <div class="items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="items grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     <!-- product content -->
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/desktop/d2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/pc/p2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/controller/c2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/mouse/m2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/monitor/m2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/headphone/h2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/keyboard/k2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/pc/p4.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                         <!-- product img -->
-                        <div class="product_img bg-gray-100 w-full flex justify-center items-center h-52 p-2">
+                        <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
                             <img src="<?= URLROOT; ?>/img/product/cartmere/cm2.png" alt="" class="w-4/6 h-4/6">
                         </div>
-                        <!-- product name -->
-                        <h3>Product One</h3>
-                        <!-- product price -->
-                        <strong>$140.00</strong>
+                        <div class="bg-zinc-900 text-white flex justify-around py-4">
+                            <!-- product name -->
+                            <h3 class="font-semibold test-lg">Product One</h3>
+                            <!-- product price -->
+                            <strong class=" bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center w-fit">$140.00</strong>
+                        </div>
                     </div>
                 </div>
                 <!-- pagination  -->
