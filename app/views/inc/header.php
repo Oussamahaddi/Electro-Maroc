@@ -14,9 +14,9 @@
     <!-- header start -->
     <header class="w-full flex justify-center h-32 relative">
         <div class="flex items-center justify-between w-5/6">
-            <div class="logo w-fit">
-                <a href="<?= URLROOT . '/Pages/index'; ?>" class="sm:block hidden"><img src="<?= URLROOT; ?>/img/logo/electromaroclogo.png" alt="Electro Maroc" class="w-2/6"></a>
-                <a href="<?= URLROOT . '/Pages/index'; ?>" class="sm:hidden"><img src="<?= URLROOT; ?>/img/logo/electromaroclogomobile.png" alt="Electro Maroc" class="w-2/6"></a>
+            <div class="w-2/6">
+                <a href="<?= URLROOT . '/Pages/index'; ?>" class="w-fit sm:block hidden"><img src="<?= URLROOT; ?>/img/logo/electromaroclogo.png" alt="Electro Maroc" class="w-2/5"></a>
+                <a href="<?= URLROOT . '/Pages/index'; ?>" class="w-fit sm:hidden"><img src="<?= URLROOT; ?>/img/logo/electromaroclogomobile.png" alt="Electro Maroc" class="w-2/5"></a>
             </div>
             <div class="flex gap-2 items-center bg-zinc-900 rounded-md sm:pr-2">
                 <input type="recherche" placeholder="Search products" class="rounded-l-md pl-2 py-1 border sm:block hidden"><i class="fa-solid fa-magnifying-glass cursor-pointer text-white px-2"></i>
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                         <div class="p-4 justify-center flex bg-slate-300">
-                                            <button class="text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100  text-teal-700 border duration-200 ease-in-out border-teal-600 transition">Checkout $36.66</button>
+                                            <a href="<?php echo URLROOT; ?>/Panier/commandeDetails"><button class="text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100  text-teal-700 border duration-200 ease-in-out border-teal-600 transition">Checkout $36.66</button></a>
                                         </div>
                                     </div>
                                 </div>
