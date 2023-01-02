@@ -2,14 +2,12 @@
 
 <?php
 
-    class Panier extends controller {
-
+    class Commandes extends Controller {
         private $commandeModel;
 
         public function __construct() {
-            $this->commandeModel = $this->model('commande');
+            $this->commandeModel = $this->model('Commande');
         }
-        
         public function commandeDetails() {
 
             $commandeCheck = $this->commandeModel->checkCommandes();

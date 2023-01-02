@@ -181,6 +181,7 @@
                 die('it me admin');
             } else {
                 $_SESSION['name'] = $unkown->full_name;
+                $_SESSION['id'] = $unkown->id;
                 redirect('Pages/index');
             }
         }

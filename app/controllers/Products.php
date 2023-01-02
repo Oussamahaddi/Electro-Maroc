@@ -2,7 +2,7 @@
 
 <?php
 
-    class Product extends Controller {
+    class Products extends Controller {
 
         private $productModel;
 
@@ -10,11 +10,21 @@
             $this->productModel = $this->model('Product');
         }
 
-        public function productdetail() {
+        public function productdetail($id) {
+
+            $product = $this->productModel->getProductById($id);
 
             $data = [
-                'products' => ''
+                'id' => $product->id_p,
+                'libelle' => $product->libelle,
+                'description' => $product->description,
+                'selling_price' => $product->selling_price,
+                'image' => $product->image,
+                'category' => $product->name,
+                'quantity' => $product->quantity
             ];
+
             $this->view('allPages/productdetail', $data);
         }
+
     }

@@ -59,5 +59,5 @@
 </body>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
-    <script src="js/main.js" type="module"></script>
+    <script src="<?= URLROOT . '/js/slider.js"'; ?>" type="module"></script>
 </html>

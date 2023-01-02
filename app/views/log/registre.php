@@ -10,10 +10,10 @@
 </head>
 <body>
 
-    <section class="bg-gradient-to-r from-black via-gray-900 to-gray-700">
+    <section class="bg-gray-900 bg-no-repeat bg-cover" style="background-image: url(<?= URLROOT . '/img/bg.png';?>);">
         <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0">
-                <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <div class="p-2 space-y-4 md:space-y-6 sm:p-6">
                     <div class="flex justify-between items-center">
                         <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
                             Create an account

@@ -4,7 +4,7 @@
 
 
 <!-- home page start -->
-<section class="w-full flex justify-center">
+<section class="w-full flex justify-center ">
     <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
         <div class="big_img bg-gradient-to-r from-slate-900 to-purple-900 col-span-3 flex relative p-12 h-fit">
             <div class="flex flex-col gap-4 w-5/6  relative z-10">
@@ -17,13 +17,13 @@
                     <button class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">SEE DETAIL</button>
                 </div>
             </div>
-            <div class=" w-5/6 right-8">
-                <img src="<?= URLROOT . '/img/product/pc/p3.png'?>" alt="pc" class="">
+            <div class=" w-5/6 right-8 flex justify-center items-center">
+                <img src="<?= URLROOT . '/img/product/pc/p3.png'?>" alt="pc" class="w-11/12" id="slider_img">
             </div>
-            <div class="text-white absolute bottom-2 right-1/2 my-2 flex gap-4">
-                <span>o</span>
-                <span>o</span>
-                <span>o</span>
+            <div class="text-white absolute bottom-2 right-1/2 my-2 flex gap-4" id="slider_bullet">
+                <span class="bg-white w-[10px] h-[10px] border-white border-2 rounded-full cursor-pointer" data-index="1"></span>
+                <span class="w-[10px] h-[10px] border-white border-2 rounded-full cursor-pointer" data-index="2"></span>
+                <span class="w-[10px] h-[10px] border-white border-2 rounded-full cursor-pointer" data-index="3"></span>
             </div>
         </div>
         <div class="small_img bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-gray-900 via-gray-100 to-gray-900 col-span-1 flex flex-col justify-around">

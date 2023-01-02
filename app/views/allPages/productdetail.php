@@ -17,15 +17,12 @@
             </div>
             <div class="w-5/6 h-full flex flex-col gap-4 justify-around">
                 <div>
-                    <h1 class="text-xl font-bold">ASUS TUF Gaming F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display,</h1>
+                    <h1 class="text-xl font-bold"><?= $data['libelle'] ?></h1>
                 </div>
-                <div class="text-red-500 text-lg font-semibold">$<span>499.00</span></div>
+                <div class="text-red-500 text-lg font-semibold">$<span><?= $data['selling_price'] ?></span></div>
                 <div>
                     <p class="text-gray-500 text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Placeat ducimus impedit maiores ut pariatur maxime odio, 
-                        vero omnis, eveniet itaque nisi corporis porro dolorum. Ducimus 
-                        impedit exercitationem laudantium labore rem.
+                        <?= $data['description'] ?>
                     </p>
                 </div>
                 <div>
@@ -33,27 +30,32 @@
                     <div><strong>Libelle : </strong> <span>Lorem ipsum dolor</span></div>
                     <div><strong>Code Bare : </strong> <span>Lorem ipsum dolor</span></div>
                 </div>
-                <div>
-                    <label for="quantite">Quantite : </label>
-                    <select name="" id="quantite" class="w-14 rounded">
-                        <optgroup label="Qts">
-                            <option value="" selected>1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div class="flex gap-4 items-center">
-                    <div>
-                        <button class="bg-zinc-900 border border-gray-300 text-white  py-2 px-4 flex gap-4 items-center transition-all duration-500 hover:bg-white hover:text-black"><i class="fa-sharp fa-solid fa-bag-shopping"></i>ADD TO CART</button>
+
+                <form action="<?= URLROOT . '/Carts/addToCart/' . $data['id']; ?>" method="POST">
+                    <div class="mb-2">
+                        <label for="quantite">Quantity : </label>
+                        <select name="quantity" id="quantite" class="w-14 rounded">
+                            <optgroup label="Qts">
+                                <?php   
+                                    for($i = 1; $i <= $data['quantity']; $i++) {
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                    }
+                                ?>
+                            </optgroup>
+                        </select>
                     </div>
-                    <div>
-                        <button class="py-2 px-4 border border-gray-300 flex gap-4 items-center transition-all duration-500 hover:bg-zinc-900 hover:text-white"><i class="fa-regular fa-heart"></i>ADD TO WISHLESS</button>
+                    <div class="flex gap-4 items-center">
+                        <div>
+                            <button class="bg-zinc-900 border border-gray-300 text-white  py-2 px-4 flex gap-4 items-center transition-all duration-500 hover:bg-white hover:text-black"><i class="fa-sharp fa-solid fa-bag-shopping"></i>ADD TO CART</button>
+                        </div>
+                        <div>
+                            <button class="py-2 px-4 border border-gray-300 flex gap-4 items-center transition-all duration-500 hover:bg-zinc-900 hover:text-white"><i class="fa-regular fa-heart"></i>ADD TO WISHLESS</button>
+                        </div>
                     </div>
-                </div>
+                </form>
+
                 <div class="text-sm grid gap-2">
-                    <div> <strong>Categorie :</strong> Pc Portable </div>
+                    <div> <strong>Categorie :</strong> <?= $data['category']; ?> </div>
                     <div> <strong>Available :</strong> 5 Product in stock </div>
                 </div>
             </div>

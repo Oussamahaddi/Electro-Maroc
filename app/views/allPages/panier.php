@@ -16,7 +16,7 @@
                     </div>
                 <?php } else { ?>
                     <?php foreach($data['commandes'] as $commande) : ?>
-                    <div><?php echo $commande->id; ?></div>
+                        <div><?php echo $commande->id; ?></div>
                     <?php endforeach; ?>
                 <?php } ?>
         </div>
