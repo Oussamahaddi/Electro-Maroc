@@ -2,6 +2,7 @@
 
 print_r($data['product_name'])
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en" class="">

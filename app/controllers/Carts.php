@@ -35,6 +35,6 @@
                 'product_name' => $cartProduct
             ];
 
-            return $data;
+        return $data;
         }
     }
