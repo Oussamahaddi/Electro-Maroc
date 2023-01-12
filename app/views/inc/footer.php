@@ -1,7 +1,7 @@
 
 
     <footer class="bg-zinc-800 grid place-items-center pt-6 mt-16">
-        <div class="footer_container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center items-start text-white w-5/6">
+        <div class="footer_container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 place-items-center items-start text-white w-5/6">
             <div class="adress">
                 <div class="img mb-4">
                     <img src="" alt="Electro Maroc">
@@ -16,7 +16,7 @@
                     <p class="text-gray-500 text-sm">PHONE: (212) 6-12 34 12 54 99</p>
                 </div>
             </div>
-            <div class="customer">
+            <div class="customer max-sm:justify-self-start max-sm:my-6">
                 <h3 class="mb-4">Customer Care</h3>
                 <ul class="grid gap-1.5">
                     <li class="text-gray-400"><a href="#"> Monitor</a></li>
@@ -27,7 +27,7 @@
                     <li class="text-gray-400"><a href="#"> Phones</a></li>
                 </ul>
             </div>
-            <div class="information">
+            <div class="information max-sm:justify-self-start max-sm:my-6">
                 <h3 class="mb-4">Information</h3>
                 <ul class="grid gap-2">
                     <li class="text-gray-400"><a href="#">About Us</a></li>

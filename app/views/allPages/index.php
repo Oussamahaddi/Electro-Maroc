@@ -5,9 +5,9 @@
 
 <!-- home page start -->
 <section class="w-full flex justify-center ">
-    <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
-        <div class="big_img bg-gradient-to-r from-slate-900 to-purple-900 col-span-3 flex relative p-12 h-fit">
-            <div class="flex flex-col gap-4 w-5/6  relative z-10">
+    <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="bg-gradient-to-r from-slate-900 to-purple-900 sm:col-span-3 flex max-sm:flex-col relative p-12 h-fit max-sm:col-span-4">
+            <div class="flex flex-col gap-4 w-5/6  relative z-10 max-sm:w-full">
                 <p class="text-white font-semibold">PC</p>
                 <h1 class=" text-white font-bold text-2xl w-5/6">
                     ASUS TUF Gaming F15 Gaming Laptop, 15.6" 144Hz FHD IPS-Type Display,
@@ -39,10 +39,10 @@
                 <img src="<?= URLROOT . '/img/product/mouse/m2.png'?>" alt="pc" class="w-6/12">
             </div>
         </div>
-        <div class="small_img bg-[conic-gradient(at_right,_var(--tw-gradient-stops))] from-indigo-200 via-slate-600 to-indigo-200 relative max-h-60 col-span-4 p-4">
-            <div class="w-full h-full flex justify-around items-center">
-                <img src="<?= URLROOT . '/img/product/desktop/d2.png'?>" alt="pc" class="h-full">
-                <div class="w-3/6 flex flex-col gap-4">
+        <div class="small_img bg-[conic-gradient(at_right,_var(--tw-gradient-stops))] from-indigo-200 via-slate-600 to-indigo-200 relative sm:max-h-60 col-span-4 p-4 ">
+            <div class="w-full h-full flex justify-around items-center max-sm:flex-col">
+                <img src="<?= URLROOT . '/img/product/desktop/d2.png'?>" alt="pc" class="h-full max-sm:w-3/6">
+                <div class="w-3/6 flex flex-col gap-4 max-sm:w-5/6 max-sm:mt-6">
                     <strong class="text-gray-300 text-sm w-fit">DESKTOP GAMER</strong>
                     <h2 class="text-white font-bold text-lg w-fit">
                         Vibox VI-20 PC Gamer - 24" Écran Pack - AMD Athlon PRO 300GE - Radeon Vega 3 - 16Go RAM - 1To HDD - Win11 - WiFi
@@ -57,7 +57,7 @@
 
 <!-- shipping start -->
 <section class="w-full flex justify-center my-8">
-    <div class="w-5/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="w-5/6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="flex gap-6 items-center bg-gray-100 rounded p-2">
             <div>
                 <i class="fa-solid fa-truck-fast text-4xl"></i>

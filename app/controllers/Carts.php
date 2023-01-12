@@ -10,19 +10,19 @@
         }
 
         public function addToCart($id) {
+            // add product into cart
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $data = [
+                    'id_product' => (int)$id,
+                    'id_client' => $_SESSION['id'],
+                    'quantity' => (int)$_POST['quantity']
+                ];
 
-            $product = $this->cartModel->getProductById($id);
-
-            $data = [
-                'id_product' => $product->id_p,
-                'id_client' => $_SESSION['id'],
-                'quantity' => $product->quantity
-            ];
-
-            if ($this->cartModel->addToCart($data)) {
-            die('succe');
-            } else {
-            die('l9wada');
+                if ($this->cartModel->setInCart($data)) {
+                    die('succe');
+                } else {
+                    die('l9wada');
+                }
             }
 
         }

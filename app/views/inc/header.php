@@ -1,7 +1,6 @@
 <?php
 
-print_r($data['product_name'])
-
+// print_r($data['product_name'])
 
 ?>
 <!DOCTYPE html>

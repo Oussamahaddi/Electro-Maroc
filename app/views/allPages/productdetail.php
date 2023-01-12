@@ -34,7 +34,7 @@
                 <form action="<?= URLROOT . '/Carts/addToCart/' . $data['id']; ?>" method="POST">
                     <div class="mb-2">
                         <label for="quantite">Quantity : </label>
-                        <select name="quantity" id="quantite" class="w-14 rounded">
+                        <select name="quantity" id="quantite" class=" rounded">
                             <optgroup label="Qts">
                                 <?php   
                                     for($i = 1; $i <= $data['quantity']; $i++) {

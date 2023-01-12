@@ -178,7 +178,7 @@
             // create session of admin and client
             $_SESSION['Email'] = $unkown->email;
             if ($_SESSION['Email'] == 'oussama@gmail.com') {
-                die('it me admin');
+                redirect('Dashboards/statistique');
             } else {
                 $_SESSION['name'] = $unkown->full_name;
                 $_SESSION['id'] = $unkown->id;
@@ -189,6 +189,8 @@
 
         public function logOutAdmin() {
             unset($_SESSION['Email']);
+            unset($_SESSION['id']);
+            unset($_SESSION['name']);
             session_destroy();
             redirect('allPages/index');
         }
