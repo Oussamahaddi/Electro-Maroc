@@ -1,5 +1,6 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
+    print_r($_SESSION)
 ?>
 
 

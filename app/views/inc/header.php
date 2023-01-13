@@ -53,7 +53,7 @@
                                             </div>
                                         </div>
                                         <div class="p-4 justify-center flex bg-slate-300">
-                                            <a href="<?php echo URLROOT; ?>/Commandes/commandeDetails">
+                                            <a href="<?php echo URLROOT; ?>/Carts/getProductCart">
                                                 <button class="text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100  text-teal-700 border duration-200 ease-in-out border-teal-600 transition">Checkout $36.66</button>
                                             </a>
                                         </div>

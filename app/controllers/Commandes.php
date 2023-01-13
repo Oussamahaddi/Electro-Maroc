@@ -20,4 +20,8 @@
             
 
         }
+
+        public function setCommande() {
+            die('commande page');
+        }
     }
