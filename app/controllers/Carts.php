@@ -12,16 +12,20 @@
         public function addToCart($id) {
             // add product into cart
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $data = [
-                    'id_product' => (int)$id,
-                    'id_client' => $_SESSION['id'],
-                    'quantity' => (int)$_POST['quantity']
-                ];
-
-                if ($this->cartModel->setInCart($data)) {
-                    die('succe');
+                if (isLoggedIn()) {
+                    $data = [
+                        'id_product' => (int)$id,
+                        'id_client' => $_SESSION['id'],
+                        'quantity' => (int)$_POST['quantity']
+                    ];
+    
+                    if ($this->cartModel->setInCart($data)) {
+                        die('succe');
+                    } else {
+                        die('l9wada');
+                    }
                 } else {
-                    die('l9wada');
+                    redirect('/Authentification/login');
                 }
             }
 

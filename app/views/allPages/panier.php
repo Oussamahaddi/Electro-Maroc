@@ -1,5 +1,6 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
+    print_r($data['product_name'])
 ?>
 
     <section class="w-full flex justify-center items-center mt-10 h-full my-20">
@@ -20,124 +21,62 @@
                 <?php } else { ?>
                     <div class="grid grid-cols-1 mx-auto max-w-screen-2xl md:grid-cols-2">
                         <div class="py-12 bg-gray-50">
-                            <div class="max-w-lg px-4 mx-auto space-y-8 lg:px-8">
+                            <div class="max-w-lg px-4 mx-auto space-y-8 lg:px-4">
                                 <div>
                                     <strong class="text-2xl">Shopping Cart.</strong>
                                 </div>
                                 
                                 <div>
-                                    <div class="flow-root">
-                                            
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Category
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Price
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Action
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple MacBook Pro 17"
-                </th>
-                <td class="px-6 py-4">
-                    Sliver
-                </td>
-                <td class="px-6 py-4">
-                    Laptop
-                </td>
-                <td class="px-6 py-4">
-                    $2999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-                <td class="px-6 py-4">
-                    Laptop PC
-                </td>
-                <td class="px-6 py-4">
-                    $1999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-                <td class="px-6 py-4">
-                    Accessories
-                </td>
-                <td class="px-6 py-4">
-                    $99
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="border-b bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Google Pixel Phone
-                </th>
-                <td class="px-6 py-4">
-                    Gray
-                </td>
-                <td class="px-6 py-4">
-                    Phone
-                </td>
-                <td class="px-6 py-4">
-                    $799
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Apple Watch 5
-                </th>
-                <td class="px-6 py-4">
-                    Red
-                </td>
-                <td class="px-6 py-4">
-                    Wearables
-                </td>
-                <td class="px-6 py-4">
-                    $999
-                </td>
-                <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                                    <div class="">
+
+                                        <!-- table of product -->
+                                        
+                                        <div class="relative sm:rounded-lg">
+                                            <table class="w-full text-sm text-left text-gray-500 ">
+                                                <thead class="text-xs text-gray-700 uppercase bg-gray-200 ">
+                                                    <tr>
+                                                        <th scope="col" class="px-6 py-3">
+                                                            <span class="sr-only">Image</span>
+                                                        </th>
+                                                        <th scope="col" class="px-6 py-3">
+                                                            Product
+                                                        </th>
+                                                        <th scope="col" class="px-6 py-3">
+                                                            Qty
+                                                        </th>
+                                                        <th scope="col" class="px-6 py-3">
+                                                            Price
+                                                        </th>
+                                                        <th scope="col" class="px-6 py-3">
+                                                            Action
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach($data['product_name'] as $panierProduct) : ?>
+                                                        <tr class="bg-white border-b ">
+                                                            <td class="p-2">
+                                                                <img src="<?= URLROOT . '/img/product/pc/p1.png';?>" alt="Apple Watch" class="">
+                                                            </td>
+                                                            <td class="px-6 py-4 font-semibold text-gray-900">
+                                                                <?= $panierProduct->libelle?>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <div class="flex items-center space-x-3">
+                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantite?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
+                                                                </div>
+                                                            </td>
+                                                            <td class="px-6 py-4 font-semibold text-gray-900">
+                                                                <?= $panierProduct->libelle?>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
 
                                     </div>
                                 </div>

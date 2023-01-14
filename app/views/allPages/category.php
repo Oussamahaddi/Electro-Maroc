@@ -1,6 +1,5 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
-print_r($data['select_by_categorie']);
 ?>
 
 
@@ -22,7 +21,7 @@ print_r($data['select_by_categorie']);
                     <!-- all items of shop -->
                     <div class="items grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
                         <!-- product content -->
-                        <?php foreach ($data['products'] as $product): ?>
+                        <?php foreach ($data['select_by_categorie'] as $product): ?>
                             <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                                 <!-- product img -->
                                 <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">

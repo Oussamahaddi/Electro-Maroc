@@ -16,7 +16,7 @@
 
             return $row;
         }
-        
+
         public function filterByCategorie($idCategorie) {
             $this->db->query("SELECT * FROM product WHERE category = :id_category");
             $this->db->bind(':id_category', $idCategorie);

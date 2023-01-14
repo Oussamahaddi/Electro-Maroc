@@ -28,6 +28,17 @@
 
             $this->view('allPages/shop', $data);
         }
+        public function category($idCategorie = null) {
+            $allCategorie = $this->categorieModel->getAllCatgories();
+            $selectedCategorie = $this->categorieModel->filterByCategorie($idCategorie);
+
+            $data = [
+                'categories' => $allCategorie,
+                'select_by_categorie' => $selectedCategorie,
+            ];
+
+            $this->view('allPages/category', $data);
+        }
         public function contact() {
             $this->view('allPages/contact');
         }
