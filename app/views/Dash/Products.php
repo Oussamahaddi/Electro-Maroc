@@ -61,7 +61,7 @@
                     </a>
                     </li>
                     <li>
-                        <a href="<?= URLROOT . '/Dashboards/'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-sharp fa-solid fa-boxes-stacked"></i>
                             </span>
@@ -122,22 +122,7 @@
         <!-- body -->
         <div class="mt-24 h-full flex flex-wrap justify-around max-sm:flex-col max-sm:items-center col-start-2 col-span-2">
 
-            <div class="w-52 h-32 bg-gradient-to-r from-red-400 to-red-700 rounded-lg p-2">
-                <span>Products -</span>
-                <div><?= $data['products_stats']?></div>
-            </div>
-            <div class="w-52 h-32 bg-gradient-to-r from-cyan-400 to-cyan-700 rounded-lg p-2">
-                <span>Clients -</span>
-                <div><?= $data['clients_stats']?></div>
-            </div>
-            <div class="w-52 h-32 bg-gradient-to-r from-green-400 to-green-700 rounded-lg p-2">
-                <span>Orders -</span>
-                <div><?= $data['orders_stats']?></div>
-            </div>
-            <div class="w-52 h-32 bg-gradient-to-r from-yellow-400 to-yellow-700 rounded-lg p-2">
-                <span>Categories -</span>
-                <div><?= $data['categories_stats']?></div>
-            </div>
+            
 
         </div>
         <!-- ./body -->

@@ -24,4 +24,13 @@
 
             $this->view('Dash/Statistique', $data);
         }
+
+        public function products() {
+        $products = $this->dashboardModel->getAllProduct();
+        $data = [
+            'product_image' => $products->image,
+            'product_libelle' => $products->libelle,
+            'product_'
+        ];
+        }
     }
