@@ -117,11 +117,11 @@
                                 <!-- table btn -->
                                 <td class="px-6 py-4">
                                     <div class="flex gap-8">
-                                        <button data-modal-toggle="deleteModal" value="<?= $product->id ?>" class="deleteBtn text-red-500 text-center">
+                                        <button data-modal-toggle="deleteModal" value="<?= $product->id_p ?>" class="deleteBtn text-red-500 text-center">
                                             <i class="fa-solid fa-trash"></i>
                                             Delet
                                         </button>
-                                        <a href="<?= URLROOT . '/Dashboards/editProduct/' . $product->id; ?>" class="text-green-500 text-center">
+                                        <a href="<?= URLROOT . '/Dashboards/editProduct/' . $product->id_p; ?>" class="text-green-500 text-center">
                                             <i class="fa-solid fa-pen"></i>
                                             Edit
                                         </a>
