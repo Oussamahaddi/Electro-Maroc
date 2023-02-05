@@ -46,10 +46,10 @@
                     </div>
                     <div class="flex gap-4 items-center">
                         <div>
-                            <button class="bg-zinc-900 border border-gray-300 text-white  py-2 px-4 flex gap-4 items-center transition-all duration-500 hover:bg-white hover:text-black"><i class="fa-sharp fa-solid fa-bag-shopping"></i>ADD TO CART</button>
+                            <button type="submit" class="bg-zinc-900 border border-gray-300 text-white  py-2 px-4 flex gap-4 items-center transition-all duration-500 hover:bg-white hover:text-black"><i class="fa-sharp fa-solid fa-bag-shopping"></i>ADD TO CART</button>
                         </div>
                         <div>
-                            <button class="py-2 px-4 border border-gray-300 flex gap-4 items-center transition-all duration-500 hover:bg-zinc-900 hover:text-white"><i class="fa-regular fa-heart"></i>ADD TO WISHLESS</button>
+                            <button type="button" class="py-2 px-4 border border-gray-300 flex gap-4 items-center transition-all duration-500 hover:bg-zinc-900 hover:text-white"><i class="fa-regular fa-heart"></i>ADD TO WISHLESS</button>
                         </div>
                     </div>
                 </form>

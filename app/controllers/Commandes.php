@@ -10,7 +10,7 @@
         }
         public function commandeDetails() {
 
-            $commandeCheck = $this->commandeModel->checkCommandes();
+            $commandeCheck = $this->commandeModel->getAllCommande();
 
             $data = [
                 'commandes' => $commandeCheck
@@ -21,7 +21,4 @@
 
         }
 
-        public function setCommande() {
-            die('commande page');
-        }
     }

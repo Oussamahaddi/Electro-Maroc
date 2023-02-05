@@ -1,11 +1,10 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
-    print_r($data['product_name'])
 ?>
 
     <section class="w-full flex justify-center items-center mt-10 h-full my-20">
         <div class="w-5/6">
-                <?php if ($data['product_name'] === false) { ?>
+                <?php if ($data['commandes'] === false) { ?>
                     <div class="flex flex-col items-center gap-6">
                         <h3 class="font-semibold text-xl">You don't have any items in your cart.</h3>
                         <?php if (!isset($_SESSION['Email'])) : ?>
@@ -53,7 +52,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php foreach($data['product_name'] as $panierProduct) : ?>
+                                                    <?php foreach($data['commandes'] as $panierProduct) : ?>
                                                         <tr class="bg-white border-b ">
                                                             <td class="p-2">
                                                                 <img src="<?= URLROOT . '/img/product/pc/p1.png';?>" alt="Apple Watch" class="">
@@ -63,11 +62,11 @@
                                                             </td>
                                                             <td class="px-6 py-4">
                                                                 <div class="flex items-center space-x-3">
-                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantite?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
+                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantity?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
                                                                 </div>
                                                             </td>
                                                             <td class="px-6 py-4 font-semibold text-gray-900">
-                                                                <?= $panierProduct->libelle?>
+                                                                <?= $panierProduct->total_price_product?>
                                                             </td>
                                                             <td class="px-6 py-4">
                                                                 <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>

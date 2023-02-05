@@ -7,9 +7,9 @@
             $this->db = new Database;
         }
 
-        public function checkCommandes() {
+        public function getAllCommande() {
 
-            $this->db->query("SELECT * FROM commande");
+            $this->db->query("SELECT * FROM commande JOIN product");
 
             $row = $this->db->resultSet();
 

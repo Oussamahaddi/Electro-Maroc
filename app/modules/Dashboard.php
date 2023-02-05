@@ -8,16 +8,22 @@
             $this->db = new Database;
         }
 
-        public function getAllProduct() {
-            $this->db->query("SELECT * FROM product p INNER JOIN category c");
-
+        public function getAllProductAndCategory() {
+            $this->db->query("SELECT p.*, c.* FROM product p INNER JOIN category c ON p.category = c.id");
             $row = $this->db->resultSet();
-
             if ($this->db->rowCount() > 0) {
                 return $row;
             } else {
                 return false;
             }
+        }
+
+        /////////////////////////////////// statistique \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        public function getAllProduct() {
+            $this->db->query("SELECT * FROM product");
+            $row = $this->db->resultSet();
+            return $row;
+            
         }
         public function getAllClient() {
             $this->db->query("SELECT * FROM Client");
@@ -26,22 +32,16 @@
         }
         public function getAllOrder() {
             $this->db->query("SELECT * FROM commande");
-
             $row = $this->db->resultSet();
-
             return $row;
         }
         public function getAllCategorie() {
             $this->db->query("SELECT * FROM category");
             $row = $this->db->resultSet();
-            if ($this->db->rowCount() > 0) {
-                return $row;
-            } else {
-                return false;
-            }
+            return $row;
         }
-        public function getCategorieByProduct($productCategorieId) {
-            $this->db->query("SELECT * FROM category c INNER JOIN product p ON c.id = p.category");
+        public function getCategorieByProduct() {
+            $this->db->query("SELECT c.name FROM category c INNER JOIN product p ON c.id = p.category");
             $row = $this->db->single();
             if ($this->db->rowCount() > 0) {
                 return $row;
@@ -49,6 +49,8 @@
                 return false;
             }
         }
+
+        /////////////////////////////////// products \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
         public function getProductById($id) {
             $this->db->query("SELECT * FROM product WHERE id_p = :id");
@@ -134,13 +136,75 @@
             }
         }
 
-        // public function delet($id) {
-        //     $this->db->query("DELETE FROM `products` WHERE id = :id");
-        //     $this->db->bind(':id', $id);
-        //     if ($this->db->execute()) {
-        //         return true;
-        //     } else {
-        //         return false;
-        //     }
-        // }
+        public function delet($id) {
+            $this->db->query("DELETE FROM `product` WHERE id_p = :id");
+            $this->db->bind(':id', $id);
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        /////////////////////////////////// Categories \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        public function getCategoryById($id) {
+            $this->db->query("SELECT * FROM category WHERE id = :id");
+            $this->db->bind(':id', $id);
+            $row = $this->db->single();
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
+        }
+
+        public function checkCategoryName($name) {
+            $this->db->query("SELECT * FROM category WHERE name = :name");
+            $this->db->bind(':name', $name);
+            $row = $this->db->single();
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
+        }
+
+        public function addCategory($data) {
+            $this->db->query("INSERT INTO `category`(`name`, `category_description`, `picture`) VALUES (:name, :description, :picture)");
+            $this->db->bind(':name', $data['category_name']);
+            $this->db->bind(':description', $data['category_description']);
+            $this->db->bind(':picture', $data['category_image']);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function editCategory($data) {
+            $this->db->query("UPDATE `category` SET `name`= :name, `category_description`= :description, `picture`= :picture  WHERE id = :id");
+            $this->db->bind(':id', $data['id']);
+            $this->db->bind(':name', $data['category_name']);
+            $this->db->bind(':description', $data['category_description']);
+            $this->db->bind(':picture', $data['category_image']);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public function deletCategory($id) {
+            $this->db->query("DELETE FROM `category` WHERE id = :id");
+            $this->db->bind(':id', $id);
+            if ($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        ///////////////////////////////////// Orders \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        
     }

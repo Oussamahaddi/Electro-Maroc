@@ -12,17 +12,24 @@
         public function addToCart($id) {
             // add product into cart
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $product = $this->cartModel->getProductInfo($id);
                 if (isLoggedIn()) {
                     $data = [
-                        'id_product' => (int)$id,
+                        'id_product' => $product->id_p,
                         'id_client' => $_SESSION['id'],
-                        'quantity' => (int)$_POST['quantity']
+                        'quantity' => (int)trim($_POST['quantity']),
+                        'create_date' => date('d-m-y'),
+                        'sending_date' => '',
+                        'retreving_date' => '',
+                        'unit_price' => $product->selling_price,
+                        'total_price' => $product->selling_price * (int)$_POST['quantity'],
+                        'total_price_commande' => '',
                     ];
     
                     if ($this->cartModel->setInCart($data)) {
-                        die('succe');
+                        redirect('/Commandes/commandeDetails');
                     } else {
-                        die('l9wada');
+                        die('something wrong');
                     }
                 } else {
                     redirect('/Authentification/login');
@@ -31,14 +38,14 @@
 
         }
 
-        public function getProductCart() {
+        // public function getProductCart() {
 
-            $cartProduct = $this->cartModel->getProductFromCart();
+        //     $cartProduct = $this->cartModel->getProductFromCart();
 
-            $data = [
-                'product_name' => $cartProduct
-            ];
+        //     $data = [
+        //         'product_name' => $cartProduct
+        //     ];
 
-            $this->view('allPages/panier', $data);
-        }
+        //     $this->view('allPages/panier', $data);
+        // }
     }

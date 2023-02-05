@@ -1,4 +1,6 @@
-
+<?php
+print_r($data['category']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,56 +128,44 @@
 
             <!-- add button -->
             <div class="flex justify-end mr-4">
-                <a href="<?= URLROOT . '/Dashboards/addProduct'; ?>" class="text-white text-end fixed p-2 w-12 aspect-square bg-[#E1726E] rounded-full cursor-pointer flex items-center justify-center">
+                <a href="<?= URLROOT . '/Dashboards/addCategory'; ?>" class="text-white text-end fixed p-2 w-12 aspect-square bg-[#E1726E] rounded-full cursor-pointer flex items-center justify-center">
                     <i class="fa-solid fa-plus text-3xl"></i>
                 </a>
             </div>
 
             <!-- component -->
-            <?php if($data['products']) { ?>
+            <?php if($data['category']) { ?>
                 <div class=" rounded-lg border border-gray-200 shadow-md m-5">
                     <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 ">
                         <thead class="bg-gray-100">
                             <tr class="">
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Product Name</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Product Category</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Retail Price</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Final Price</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Selling Price</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Product Quantity</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Category Name</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Category description</th>
                                 <th scope="col" class="px-6 py-4 font-bold text-gray-900">Action</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                            <?php foreach($data['products'] as $product) : ?>
+                            <?php foreach($data['category'] as $category) : ?>
                                 <tr class="hover:bg-gray-50">
                                     <th class="flex items-center gap-3 px-6 py-4 font-normal text-gray-900">
                                         <div class="relative h-10 w-10">
-                                            <img class="h-full w-full object-cover object-center" src="<?= URLROOT . '/img/upload/' . $product->image; ?>" alt=""/>
+                                            <img class="h-full w-full object-cover object-center" src="<?= URLROOT . '/img/upload/' . $category->picture; ?>" alt=""/>
                                         </div>
                                         <div class="text-sm">
-                                            <div class="font-medium text-gray-700"><?= $product->libelle ?></div>
+                                            <div class="font-medium text-gray-700"><?= $category->name ?></div>
                                         </div>
                                     </th>
                                     <td class="px-6 py-4 ">
-                                        <div class="overflow-hidden text-ellipsis"><?= $product->name ?></div>
+                                        <div class="overflow-hidden text-ellipsis"><?= $category->category_description ?></div>
                                     </td>
-                                    <td class="px-6 py-4 ">
-                                        <div class="overflow-hidden text-ellipsis"><?= $product->retail_price ?></div>
-                                    </td>
-                                    <td class="px-6 py-4 ">
-                                        <div class="overflow-hidden text-ellipsis"><?= $product->final_price ?></div>
-                                    </td>
-                                    <td class="px-6 py-4"><?= $product->selling_price?></td>
-                                    <td class="px-6 py-4"><?= $product->quantity?></td>
                                     <!-- table btn -->
                                     <td class="px-6 py-4">
                                         <div class="flex gap-8">
-                                            <button data-modal-toggle="deleteModal" value="<?= $product->id_p ?>" class="deleteBtn text-red-500 text-center">
+                                            <button data-modal-toggle="deleteModal" value="<?= $category->id ?>" class="deleteBtn text-red-500 text-center">
                                                 <i class="fa-solid fa-trash"></i>
                                                 Delet
                                             </button>
-                                            <a href="<?= URLROOT . '/Dashboards/editProduct/' . $product->id_p; ?>" class="text-green-500 text-center">
+                                            <a href="<?= URLROOT . '/Dashboards/editCategory/' . $category->id; ?>" class="text-green-500 text-center">
                                                 <i class="fa-solid fa-pen"></i>
                                                 Edit
                                             </a>
@@ -222,5 +212,5 @@
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
-    <script src="<?= URLROOT . '/js/deleteProduct.js'; ?>"></script>
+    <script src="<?= URLROOT . '/js/deleteCategory.js'; ?>"></script>
 </html>
