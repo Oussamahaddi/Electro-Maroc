@@ -42,4 +42,19 @@
         public function contact() {
             $this->view('allPages/contact');
         }
+
+        public function ascend() {
+            $asc = $this->productModel->getProductAsc();
+            $data = [
+                'products_asc' => $asc
+            ];
+            $this->view('allPages/shop', $data);
+        }
+        public function descend() {
+            $desc = $this->productModel->getProductDes();
+            $data = [
+                'products_asc' => $desc
+            ];
+            $this->view('allPages/shop', $data);
+        }
     }

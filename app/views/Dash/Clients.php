@@ -124,50 +124,41 @@
         <!-- body -->
         <div class="mt-24 relative">
 
-            <!-- add button -->
-            <div class="flex justify-end mr-4">
-                <a href="<?= URLROOT . '/Dashboards/addCategory'; ?>" class="text-white text-end fixed p-2 w-12 aspect-square bg-[#E1726E] rounded-full cursor-pointer flex items-center justify-center">
-                    <i class="fa-solid fa-plus text-3xl"></i>
-                </a>
-            </div>
-
             <!-- component -->
-            <?php if($data['category']) { ?>
+            <?php if($data['clients']) { ?>
                 <div class=" rounded-lg border border-gray-200 shadow-md m-5">
                     <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 ">
                         <thead class="bg-gray-100">
                             <tr class="">
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Category Name</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Category description</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Action</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Name</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Mobile</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Sddress</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">City</th>
+                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Email</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                            <?php foreach($data['category'] as $category) : ?>
+                            <?php foreach($data['clients'] as $client) : ?>
                                 <tr class="hover:bg-gray-50">
-                                    <th class="flex items-center gap-3 px-6 py-4 font-normal text-gray-900">
+                                    <td class="flex items-center gap-3 px-6 py-4 font-normal text-gray-900">
                                         <div class="relative h-10 w-10">
-                                            <img class="h-full w-full object-cover object-center" src="<?= URLROOT . '/img/upload/' . $category->picture; ?>" alt=""/>
+                                            <img class="h-full w-full object-cover object-center" src="<?= URLROOT . '/img/admins/admin.jpg'; ?>" alt=""/>
                                         </div>
                                         <div class="text-sm">
-                                            <div class="font-medium text-gray-700"><?= $category->name ?></div>
+                                            <div class="font-medium text-gray-700"><?= $client->full_name ?></div>
                                         </div>
-                                    </th>
-                                    <td class="px-6 py-4 ">
-                                        <div class="overflow-hidden text-ellipsis"><?= $category->category_description ?></div>
                                     </td>
-                                    <!-- table btn -->
-                                    <td class="px-6 py-4">
-                                        <div class="flex gap-8">
-                                            <button data-modal-toggle="deleteModal" value="<?= $category->id ?>" class="deleteBtn text-red-500 text-center">
-                                                <i class="fa-solid fa-trash"></i>
-                                                Delet
-                                            </button>
-                                            <a href="<?= URLROOT . '/Dashboards/editCategory/' . $category->id; ?>" class="text-green-500 text-center">
-                                                <i class="fa-solid fa-pen"></i>
-                                                Edit
-                                            </a>
-                                        </div>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $client->mobile ?></div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $client->address ?></div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $client->city ?></div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $client->email ?></div>
                                     </td>
                                 </tr>
                             <?php endforeach ; ?>
@@ -175,7 +166,7 @@
                     </table>
                 </div>
             <?php } else { ?>
-                <div class="text-xl text-center text-white">there is no items</div>
+                <div class="text-xl text-center text-white">there is no Client</div>
             <?php } ?>
 
         </div>

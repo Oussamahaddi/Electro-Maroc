@@ -30,8 +30,8 @@
             $row = $this->db->resultSet();
             return $row;
         }
-        public function getAllOrder() {
-            $this->db->query("SELECT * FROM commande");
+        public function getAllCommande() {
+            $this->db->query("SELECT c.*, p.libelle, p.image FROM commande c INNER JOIN product p ON c.id_product = p.id_p");
             $row = $this->db->resultSet();
             return $row;
         }
@@ -206,5 +206,22 @@
         }
 
         ///////////////////////////////////// Orders \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-        
+        public function accept($id) {
+            $this->db->query("UPDATE `commande` SET `status` = 'Accepted' WHERE `commande`.`id` = :id");
+            $this->db->bind(':id', $id);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        public function refuse($id) {
+            $this->db->query("UPDATE `commande` SET `status` = 'Refused' WHERE `commande`.`id` = :id");
+            $this->db->bind(':id', $id);
+            if($this->db->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }

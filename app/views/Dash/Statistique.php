@@ -69,7 +69,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <a href="<?= URLROOT . '/Dashboards/category'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-sharp fa-solid fa-bars-progress"></i>
                             </span>
@@ -77,7 +77,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <a href="<?= URLROOT . '/Dashboards/client'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-solid fa-users"></i>
                             </span>
@@ -85,11 +85,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <a href="<?= URLROOT . '/Dashboards/Commandes'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Orders</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Commandes</span>
                         </a>
                     </li>
                     <li class="px-5 hidden md:block">

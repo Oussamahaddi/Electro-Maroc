@@ -15,7 +15,7 @@
             $products = $this->dashboardModel->getAllProduct();
             $categories = $this->dashboardModel->getAllCategorie();
             $clients = $this->dashboardModel->getAllClient();
-            $orders = $this->dashboardModel->getAllOrder();
+            $orders = $this->dashboardModel->getAllCommande();
 
             $data = [
                 'products_stats' => count($products),
@@ -456,14 +456,38 @@
         }
 
 
-        ///////////////////////////////////// Orders \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        ///////////////////////////////////// Commandes \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-        public function orders() {
-            $orders = $this->dashboardModel->getAllOrder();
+        public function Commandes() {
+            $Commandes = $this->dashboardModel->getAllCommande();
             $data = [
-                'orders' => $orders,
+                'Commandes' => $Commandes,
             ];
-            $this->view('Dash/Orders', $data);
+            $this->view('Dash/Commandes', $data);
         }
+
+        public function acceptCommande($id) {
+            $valide = $this->dashboardModel->accept($id);
+            if ($valide) {
+                redirect('/Dashboards/Commandes');
+            }
+        }
+        public function refuseCommande($id) {
+            $valide = $this->dashboardModel->refuse($id);
+            if ($valide) {
+                redirect('/Dashboards/Commandes');
+            }
+        }
+
+
+        ///////////////////////////////////// Clients \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+        public function client() {
+            $clients = $this->dashboardModel->getAllClient();
+            $data = [
+                'clients' => $clients,
+            ];
+            $this->view('Dash/Clients', $data);
+        }
+
 
     }

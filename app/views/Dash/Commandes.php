@@ -1,6 +1,4 @@
-<?php
-print_r($data['orders']);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +33,7 @@ print_r($data['orders']);
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
                     </li>
                     <li>
-                        <a href="<?= URLROOT . '/SignIn/logOutAdmin';?>" class="flex items-center mr-4 text-white hover:text-blue-100">
+                        <a href="<?= URLROOT . '/Authentification/logOutAdmin';?>" class="flex items-center mr-4 text-white hover:text-blue-100">
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>
@@ -89,11 +87,11 @@ print_r($data['orders']);
                         </a>
                     </li>
                     <li>
-                        <a href="<?= URLROOT . '/Dashboards/orders'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <a href="<?= URLROOT . '/Dashboards/Commandes'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Orders</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Commandes</span>
                         </a>
                     </li>
                     <li class="px-5 hidden md:block">
@@ -127,43 +125,61 @@ print_r($data['orders']);
         <div class="mt-24 relative">
 
             <!-- component -->
-            <?php if($data['orders']) { ?>
+            <?php if($data['Commandes']) { ?>
                 <div class=" rounded-lg border border-gray-200 shadow-md m-5">
                     <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 ">
                         <thead class="bg-gray-100">
-                            <tr class="">
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Category Name</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Category description</th>
-                                <th scope="col" class="px-6 py-4 font-bold text-gray-900">Action</th>
+                            <tr class="font-bold text-gray-900">
+                                <th scope="col" class="px-6 py-4">Commande Name</th>
+                                <th scope="col" class="px-6 py-4">Creation date</th>
+                                <th scope="col" class="px-6 py-4">Quantity</th>
+                                <th scope="col" class="px-6 py-4">Unit price</th>
+                                <th scope="col" class="px-6 py-4">Total price</th>
+                                <th scope="col" class="px-6 py-4">Action</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                            <?php foreach($data['orders'] as $order) : ?>
+                            <?php foreach($data['Commandes'] as $Commande) : ?>
                                 <tr class="hover:bg-gray-50">
                                     <th class="flex items-center gap-3 px-6 py-4 font-normal text-gray-900">
                                         <div class="relative h-10 w-10">
-                                            <img class="h-full w-full object-cover object-center" src="<?= URLROOT . '/img/upload/' . $order->picture; ?>" alt=""/>
+                                            <img class="h-full w-full object-cover object-center" src="<?= URLROOT . '/img/upload/' . $Commande->image; ?>" alt=""/>
                                         </div>
                                         <div class="text-sm">
-                                            <div class="font-medium text-gray-700"><?= $order->name ?></div>
+                                            <div class="font-medium text-gray-700"><?= $Commande->libelle ?></div>
                                         </div>
                                     </th>
                                     <td class="px-6 py-4 ">
-                                        <div class="overflow-hidden text-ellipsis"><?= $order->category_description ?></div>
+                                        <div class="overflow-hidden text-ellipsis"><?= $Commande->creation_date ?></div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $Commande->quantity ?></div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $Commande->unit_price ?></div>
+                                    </td>
+                                    <td class="px-6 py-4 ">
+                                        <div class="overflow-hidden text-ellipsis"><?= $Commande->total_price_product ?></div>
                                     </td>
                                     <!-- table btn -->
-                                    <td class="px-6 py-4">
-                                        <div class="flex gap-8">
-                                            <a href="<?= URLROOT . '/Dashboards/editCategory/' . $order->id; ?>" class="text-green-500 text-center">
-                                                <i class="fa-solid fa-trash"></i>
-                                                Refuse
-                                            </a>
-                                            <a href="<?= URLROOT . '/Dashboards/editCategory/' . $order->id; ?>" class="text-green-500 text-center">
-                                                <i class="fa-solid fa-pen"></i>
-                                                Accept
-                                            </a>
-                                        </div>
-                                    </td>
+                                    <?php if (empty($Commande->status)) { ?>
+                                        <td class="px-6 py-4">
+                                                <div class="flex gap-8">
+                                                    <a href="<?= URLROOT . '/Dashboards/refuseCommande/' . $Commande->id; ?>" class="text-red-500 text-center">
+                                                        <i class="fa-solid fa-trash"></i>
+                                                        Refuse
+                                                    </a>
+                                                    <a href="<?= URLROOT . '/Dashboards/acceptCommande/' . $Commande->id; ?>" class="text-green-500 text-center">
+                                                        <i class="fa-solid fa-pen"></i>
+                                                        Accept
+                                                    </a>
+                                                </div>
+                                        </td>
+                                    <?php } else { ?>
+                                        <td class="px-6 py-4 ">
+                                            <div class="overflow-hidden text-ellipsis"><?= $Commande->status ?></div>
+                                        </td>
+                                    <?php } ?>
                                 </tr>
                             <?php endforeach ; ?>
                         </tbody>
@@ -178,32 +194,9 @@ print_r($data['orders']);
     </div>
   </div>
 
-<!-- delete modal -->
-  <div id="deleteModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
-    <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-        <!-- Modal content -->
-        <div class="relative p-4 text-center bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
-            <button type="button" class="text-gray-400 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="deleteModal">
-                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                <span class="sr-only">Close modal</span>
-            </button>
-            <svg class="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-            <p class="mb-4 text-gray-500 dark:text-gray-300">Are you sure you want to delete this item?</p>
-            <div class="flex justify-center items-center space-x-4">
-                <button data-modal-toggle="deleteModal" type="button" class="py-2 px-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">
-                    No, cancel
-                </button>
-                <a href="" id="confirm-delete" class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900">
-                    Yes, I'm sure
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 </body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="https://kit.fontawesome.com/e3e5f279fe.js" crossorigin="anonymous"></script>
-    <script src="<?= URLROOT . '/js/deleteCategory.js'; ?>"></script>
 </html>

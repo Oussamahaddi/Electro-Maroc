@@ -39,7 +39,7 @@
             $row = $this->db->single();
             return $row;
         }
-        
+
         public function addToCart($data) {
             $this->db->query("INSERT INTO `commande`(
                                             `creation_date`, 
@@ -73,6 +73,16 @@
             $this->db->bind(':quantity', $data['']);
             $this->db->bind(':total_price_product', $data['']);
             $this->db->bind(':total_price_commande', $data['']);
+        }
+
+        public function getProductAsc() {
+            $this->db->query("SELECT * FROM product ORDER BY selling_price DESC");
+            $row = $this->db->resultSet();
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
         }
 
     }

@@ -33,7 +33,7 @@
                         <div class="block w-px h-6 mx-3 bg-gray-400 dark:bg-gray-700"></div>
                     </li>
                     <li>
-                        <a href="<?= URLROOT . '/SignIn/logOutAdmin';?>" class="flex items-center mr-4 text-white hover:text-blue-100">
+                        <a href="<?= URLROOT . '/Authentification/logOutAdmin';?>" class="flex items-center mr-4 text-white hover:text-blue-100">
                             <span class="inline-flex mr-1">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             </span>
@@ -87,11 +87,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?= URLROOT . '/Dashboards/orders'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                        <a href="<?= URLROOT . '/Dashboards/Commandes'; ?>" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                             <span class="inline-flex justify-center items-center ml-4">
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </span>
-                            <span class="ml-2 text-sm tracking-wide truncate">Orders</span>
+                            <span class="ml-2 text-sm tracking-wide truncate">Commandes</span>
                         </a>
                     </li>
                     <li class="px-5 hidden md:block">
