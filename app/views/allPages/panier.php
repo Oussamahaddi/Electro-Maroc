@@ -1,5 +1,8 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
+    echo '<pre>';
+    print_r($data['commandes']);
+    echo '</pre>';
 ?>
 
     <section class="w-full flex justify-center items-center mt-10 h-full my-20">
@@ -55,21 +58,21 @@
                                                     <?php foreach($data['commandes'] as $panierProduct) : ?>
                                                         <tr class="bg-white border-b ">
                                                             <td class="p-2">
-                                                                <img src="<?= URLROOT . '/img/product/pc/p1.png';?>" alt="Apple Watch" class="">
+                                                                <img src="<?= URLROOT . '/img/upload/' . $panierProduct->image;?>" alt="Apple Watch" class="">
                                                             </td>
                                                             <td class="px-6 py-4 font-semibold text-gray-900">
                                                                 <?= $panierProduct->libelle?>
                                                             </td>
                                                             <td class="px-6 py-4">
                                                                 <div class="flex items-center space-x-3">
-                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantity?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
+                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantity_commande?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
                                                                 </div>
                                                             </td>
                                                             <td class="px-6 py-4 font-semibold text-gray-900">
                                                                 <?= $panierProduct->total_price_product?>
                                                             </td>
                                                             <td class="px-6 py-4">
-                                                                <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                                                <a href="<?= URLROOT . '/commandes/removeComande/' . $panierProduct->id; ?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; ?>
@@ -83,54 +86,24 @@
                         </div>
 
                         <div class="py-12 bg-white">
-                            <div class="max-w-lg px-4 mx-auto lg:px-8">
-
-                                <!-- information form -->
-                                <form action="<?= URLROOT . '/Commandes/setCommande'; ?>" method="POST" class="grid grid-cols-6 gap-4">
-                                    <div class="col-span-3">
-                                        <label for="FirstName" class="block text-xs font-medium text-gray-700"> First Name </label>
-
-                                        <input type="text" id="FirstName" class="w-full mt-1 border-gray-200 rounded-md shadow-sm sm:text-sm" />
+                            <div class="max-w-lg px-4 mx-auto lg:px-8 grid gap-8">
+                                <div>
+                                    <h3 class="font-bold text-2xl">Summary</h3>
+                                    <p class="font-semibold ">total iteam costs : </p>
+                                    <div class="flex flex-col items-center w-full">
+                                        <?php foreach ($data['commandes'] as $commande) : ?>
+                                            <p> $<?= $commande->selling_price ?> qty x <?= $commande->quantity_commande ?> </p> <br>
+                                        <?php endforeach ?>
                                     </div>
-
-                                    <div class="col-span-3">
-                                        <label for="LastName" class="block text-xs font-medium text-gray-700" > Last Name </label>
-
-                                        <input type="text" id="LastName" class="w-full mt-1 border-gray-200 rounded-md shadow-sm sm:text-sm" />
+                                    <hr>
+                                    <div class="my-price">
+                                        <p>total : </p>
+                                        <p><?= $data['commandes'] ?></p>
                                     </div>
-
-                                    <div class="col-span-6">
-                                        <label for="Email" class="block text-xs font-medium text-gray-700"> Email </label>
-
-                                        <input type="email" id="Email" class="w-full mt-1 border-gray-200 rounded-md shadow-sm sm:text-sm" />
-                                    </div>
-
-                                    <div class="col-span-6">
-                                        <label for="Phone" class="block text-xs font-medium text-gray-700"> Phone </label>
-
-                                        <input type="tel" id="Phone" class="w-full mt-1 border-gray-200 rounded-md shadow-sm sm:text-sm" />
-                                    </div>
-
-                                    <fieldset class="col-span-6">
-                                        <legend class="block text-sm font-medium text-gray-700"> Billing Address </legend>
-
-                                        <div class="mt-1 -space-y-px bg-white rounded-md shadow-sm grid gap-4">
-                                            <div>
-                                                <label for="Country" class="block text-xs font-medium text-gray-700 mb-2">Country</label>
-                                                <input type="text" name="country" id="" class="relative w-full border-gray-200 rounded-b-md focus:z-10 sm:text-sm">
-                                            </div>
-
-                                            <div>
-                                                <label class="block text-xs font-medium text-gray-700 mb-2" for="PostalCode"> ZIP/Post Code </label>
-                                                <input type="text" id="PostalCode" placeholder="ZIP/Post Code" class="relative w-full border-gray-200 rounded-b-md focus:z-10 sm:text-sm" />
-                                            </div>
-                                        </div>
-                                    </fieldset>
-
-                                    <div class="col-span-6">
-                                        <button class="block w-full rounded-md bg-black p-2.5 text-sm text-white transition hover:shadow-lg" > Pay Now </button>
-                                    </div>
-                                </form>
+                                </div>
+                                <div class="col-span-6">
+                                    <button class="block w-full rounded-md bg-black p-2.5 text-sm text-white transition hover:shadow-lg" > Pay Now </button>
+                                </div>
                             </div>
                         </div>
                     </div>

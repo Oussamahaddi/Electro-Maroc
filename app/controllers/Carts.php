@@ -15,7 +15,6 @@
                 $product = $this->cartModel->getProductInfo($id);
                 if (isLoggedIn()) {
                     $data = [
-                        'id_product' => $product->id_p,
                         'id_client' => $_SESSION['id'],
                         'quantity' => (int)trim($_POST['quantity']),
                         'create_date' => date('d-m-y'),
@@ -27,25 +26,25 @@
                     ];
     
                     if ($this->cartModel->setInCart($data)) {
-                        redirect('/Commandes/commandeDetails');
+                        redirect('Commandes/commandeDetails');
                     } else {
                         die('something wrong');
                     }
                 } else {
-                    redirect('/Authentification/login');
+                    redirect('Authentification/login');
                 }
             }
 
         }
 
-        // public function getProductCart() {
+        public function getProductCart() {
 
-        //     $cartProduct = $this->cartModel->getProductFromCart();
+            $cartProduct = $this->cartModel->getProductFromCart();
 
-        //     $data = [
-        //         'product_name' => $cartProduct
-        //     ];
+            $data = [
+                'product_name' => $cartProduct
+            ];
 
-        //     $this->view('allPages/panier', $data);
-        // }
+            $this->view('allPages/panier', $data);
+        }
     }

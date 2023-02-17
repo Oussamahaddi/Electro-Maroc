@@ -28,9 +28,8 @@ class Cart {
                                                 `sending_date`, 
                                                 `retreving_date`, 
                                                 `id_client`, 
-                                                `id_product`, 
                                                 `unit_price`, 
-                                                `quantity`, 
+                                                `quantity_commande`, 
                                                 `total_price_product`, 
                                                 `total_price_commande`) 
                                             VALUES (
@@ -38,7 +37,6 @@ class Cart {
                                                 :s_date,
                                                 :ret_date,
                                                 :id_client,
-                                                :id_product,
                                                 :u_price,
                                                 :Q,
                                                 :t_p_product,
@@ -49,7 +47,6 @@ class Cart {
         $this->db->bind(':s_date', $data['sending_date']);
         $this->db->bind(':ret_date', $data['retreving_date']);
         $this->db->bind(':id_client', $data['id_client']);
-        $this->db->bind(':id_product', $data['id_product']);
         $this->db->bind(':u_price', $data['unit_price']);
         $this->db->bind(':Q', $data['quantity']);
         $this->db->bind(':t_p_product', $data['total_price']);

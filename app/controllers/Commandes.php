@@ -21,4 +21,12 @@
 
         }
 
+        public function removeComande($idCommande) {
+            if ($this->commandeModel->remove($idCommande)) {
+                redirect('/commandes/commandeDetails');
+            } else {
+                die('something wrong');
+            }
+        }
+
     }

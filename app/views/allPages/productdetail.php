@@ -1,5 +1,6 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
+    echo $data['quantity'];
 ?>
 
     <section class="w-full flex justify-center mt-10">
@@ -34,7 +35,7 @@
                 <form action="<?= URLROOT . '/Carts/addToCart/' . $data['id']; ?>" method="POST">
                     <div class="mb-2">
                         <label for="quantite">Quantity : </label>
-                        <select name="quantity" id="quantite" class=" rounded">
+                        <select name="quantity" id="quantite" class=" rounded w-24">
                             <optgroup label="Qts">
                                 <?php   
                                     for($i = 1; $i <= $data['quantity']; $i++) {
