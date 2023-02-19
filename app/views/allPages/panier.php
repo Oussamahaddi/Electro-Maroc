@@ -1,8 +1,5 @@
 <?php
 	include_once APPROOT . '/views/inc/header.php';
-    echo '<pre>';
-    print_r($data['commandes']);
-    echo '</pre>';
 ?>
 
     <section class="w-full flex justify-center items-center mt-10 h-full my-20">
@@ -65,11 +62,11 @@
                                                             </td>
                                                             <td class="px-6 py-4">
                                                                 <div class="flex items-center space-x-3">
-                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantity_commande?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
+                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantite?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
                                                                 </div>
                                                             </td>
                                                             <td class="px-6 py-4 font-semibold text-gray-900">
-                                                                <?= $panierProduct->total_price_product?>
+                                                                <?= '$' . $panierProduct->selling_price?>
                                                             </td>
                                                             <td class="px-6 py-4">
                                                                 <a href="<?= URLROOT . '/commandes/removeComande/' . $panierProduct->id; ?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
@@ -86,25 +83,28 @@
                         </div>
 
                         <div class="py-12 bg-white">
-                            <div class="max-w-lg px-4 mx-auto lg:px-8 grid gap-8">
-                                <div>
-                                    <h3 class="font-bold text-2xl">Summary</h3>
-                                    <p class="font-semibold ">total iteam costs : </p>
-                                    <div class="flex flex-col items-center w-full">
-                                        <?php foreach ($data['commandes'] as $commande) : ?>
-                                            <p> $<?= $commande->selling_price ?> qty x <?= $commande->quantity_commande ?> </p> <br>
-                                        <?php endforeach ?>
+                            <form action="<?= URLROOT . '/commandes/sendCommande' ?>" method="POST">
+                                <div class="max-w-lg px-4 mx-auto lg:px-8 grid gap-8">
+                                    <div>
+                                        <h3 class="font-bold text-2xl">Summary</h3>
+                                        <p class="font-semibold ">total iteam costs : </p>
+                                        <div class="flex flex-col items-center w-full">
+                                            <?php foreach ($data['commandes'] as $commande) : ?>
+                                                <p> $<?= $commande->selling_price ?> qty x <?= $commande->quantite ?> </p> <br>
+                                                <input type="text" name="products[]" value="<?= $commande->id_p ?>" id="" hidden>
+                                                <input type="text" name="quantity[]" value="<?= $commande->quantite ?>" id="" hidden>
+                                            <?php endforeach ?>
+                                        </div>
+                                        <hr>
+                                        <div class="my-price">
+                                            <p>total : <?php foreach($data['commandes'] as $commandeP) {  }  ?></p>
+                                        </div>
                                     </div>
-                                    <hr>
-                                    <div class="my-price">
-                                        <p>total : </p>
-                                        <p><?= $data['commandes'] ?></p>
+                                    <div class="">
+                                        <button class="block w-full rounded-md bg-black p-2.5 text-sm text-white transition hover:shadow-lg" > Pay Now </button>
                                     </div>
                                 </div>
-                                <div class="col-span-6">
-                                    <button class="block w-full rounded-md bg-black p-2.5 text-sm text-white transition hover:shadow-lg" > Pay Now </button>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 <?php } ?>

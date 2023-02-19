@@ -77,6 +77,16 @@
         public function rowCount() {
             return $this->stmt->rowCount();
         }
+
+        public function beginTransaction() {
+            $this->dbh->beginTransaction();
+        }
+        public function lastInserId() {
+            return $this->dbh->lastInsertId();
+        }
+        public function commit() {
+            return $this->dbh->commit();
+        }
     }
 
 

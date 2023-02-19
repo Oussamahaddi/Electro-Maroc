@@ -29,4 +29,33 @@
             }
         }
 
+        public function sendCommande() {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $products = $_POST['products'];
+                $quantity = $_POST['quantity'];
+                
+                $data = [
+                    'id_client' => $_SESSION['id'],
+                    'creation_date' => date('d-m-y'),
+                ];
+                $idCommande = $this->commandeModel->createCommande($data);
+                if ($idCommande) {
+                    for ($i = 0; $i < count($products); $i++) {
+                        $data = [
+                            'id_product' => $products[$i],
+                            'id_commande' => $idCommande,
+                            'quantite' => $quantity[$i],
+                        ];
+
+                        $this->commandeModel->addProductCommande($data);
+                    }
+                    if ($this->commandeModel->finishCommande()) {
+                        redirect('commandes/commandesDetails');
+                    } else {
+                        die('SOMETHING WRONG ???');
+                    }
+                }
+            }
+        }
+
     }
