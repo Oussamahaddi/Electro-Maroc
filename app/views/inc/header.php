@@ -51,7 +51,7 @@
                                                         <div class="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
                                                             <i class="fa-solid fa-trash"></i>
                                                         </div>
-                                                        <div>$<?= $panier->selling_price; ?></div>
+                                                        <div class="totalPrice">$<?= $panier->selling_price; ?></div>
                                                     </div>
                                                 </div>
                                             <?php endforeach; ?>
@@ -60,7 +60,7 @@
                                         <?php } ?>
                                         <div class="p-4 justify-center flex bg-slate-300">
                                             <a href="<?php echo URLROOT; ?>/Commandes/commandeDetails">
-                                                <button class="text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100  text-teal-700 border duration-200 ease-in-out border-teal-600 transition">Checkout $36.66</button>
+                                                <button class="text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100  text-teal-700 border duration-200 ease-in-out border-teal-600 transition">Checkout</button>
                                             </a>
                                         </div>
                                     </div>

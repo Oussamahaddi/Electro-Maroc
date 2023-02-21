@@ -47,6 +47,9 @@
                                                             Price
                                                         </th>
                                                         <th scope="col" class="px-6 py-3">
+                                                            Total_price
+                                                        </th>
+                                                        <th scope="col" class="px-6 py-3">
                                                             Action
                                                         </th>
                                                     </tr>
@@ -61,13 +64,10 @@
                                                                 <?= $panierProduct->libelle?>
                                                             </td>
                                                             <td class="px-6 py-4">
-                                                                <div class="flex items-center space-x-3">
-                                                                    <input type="number" id="first_product" name="" value="<?= $panierProduct->quantite?>" class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
-                                                                </div>
+                                                                <input type="number" id="first_product" name="" value="<?= $panierProduct->quantite?>" class="quantite bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 ">
                                                             </td>
-                                                            <td class="px-6 py-4 font-semibold text-gray-900">
-                                                                <?= '$' . $panierProduct->selling_price?>
-                                                            </td>
+                                                            <td class="qte px-6 py-4 font-semibold text-gray-900"><?= '$' . $panierProduct->selling_price?></td>
+                                                            <td class="totalPrice px-6 py-4 font-semibold text-gray-900"><?= '$' . $panierProduct->selling_price * $panierProduct->quantite?></td>
                                                             <td class="px-6 py-4">
                                                                 <a href="<?= URLROOT . '/commandes/removeComande/' . $panierProduct->id; ?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
                                                             </td>
@@ -90,14 +90,14 @@
                                         <p class="font-semibold ">total iteam costs : </p>
                                         <div class="flex flex-col items-center w-full">
                                             <?php foreach ($data['commandes'] as $panier) : ?>
-                                                <p> $<?= $panier->selling_price ?> qty x <?= $panier->quantite ?> </p> <br>
-                                                <input type="text" name="products[]" value="<?= $panier->id_p ?>" id="" hidden>
+                                                <p> $<?= $panier->selling_price ?> qty x <span class="hiddenInp"> <?= $panier->quantite ?> </span></p> <br>
+                                                <input type="text" name="products[]" value="<?= $panier->id_p ?>" class="hiddenInp" hidden>
                                                 <input type="text" name="quantity[]" value="<?= $panier->quantite ?>" id="quantite" hidden>
                                             <?php endforeach ?>
                                         </div>
                                         <hr>
                                         <div class="my-price">
-                                            <p>total : </p>
+                                            <p id="total">total : </p>
                                         </div>
                                     </div>
                                     <div class="">
@@ -112,6 +112,21 @@
     </section>
 
     <script>
+        let inp = document.querySelectorAll('.quantite');
+        let qte = document.querySelector('.qte');
+        let hiddenInp = document.querySelector('.hiddenInp');
+        let price = document.querySelector('.price');
+        let totaText = document.getElementById('total');
+        inp.forEach(ele => {
+            ele.addEventListener('input', (e) => {
+                // qte.textContent()
+                let totalPrice = ele.parentElement.nextElementSibling.nextElementSibling;
+                test = parseInt(ele.value);
+                // hiddenInp.textContent = test;
+                totalPrice.textContent = `$${qte.textContent.slice(1) * test}`;
+                // total.textContent = `total : ${totalPrice.textContent}`
+            })
+        });
 
     </script>
 
