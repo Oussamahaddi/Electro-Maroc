@@ -1,6 +1,6 @@
 <?php
 
-// print_r($data['product_name'])
+
 
 ?>
 <!DOCTYPE html>
@@ -37,21 +37,27 @@
                             <div class="relative">
                                 <div class=" w-full  rounded-b border-t-0 z-10">
                                     <div class="shadow-xl w-64">
-                                        <div class="p-2 flex justify-between items-center bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100">
-                                            <div class="p-2 w-14 flex justify-center items-center">
-                                                <img src="<?= URLROOT . '/img/product/pc/p1.png'; ?>" alt="img product">
-                                            </div>
-                                            <div class="flex-auto text-sm w-fit">
-                                                <div class="font-bold">Product 1</div>
-                                                <div class="text-gray-400">Qt: 2</div>
-                                            </div>
-                                            <div class="flex flex-col w-18 font-medium items-end">
-                                                <div class="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
-                                                    <i class="fa-solid fa-trash"></i>
+                                        <?php if ($data['commandes']) { ?>
+                                            <?php foreach($data['commandes'] as $panier) : ?>
+                                                <div class="p-2 flex justify-between items-center bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100">
+                                                    <div class="p-2 w-14 flex justify-center items-center">
+                                                        <img src="<?= URLROOT . '/img/upload/' . $panier->image ; ?>" alt="img product">
+                                                    </div>
+                                                    <div class="flex-auto text-sm w-fit">
+                                                        <div class="font-bold"><?= $panier->libelle; ?></div>
+                                                        <div class="text-gray-400">Qt: <?= $panier->quantite; ?></div>
+                                                    </div>
+                                                    <div class="flex flex-col w-18 font-medium items-end">
+                                                        <div class="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
+                                                            <i class="fa-solid fa-trash"></i>
+                                                        </div>
+                                                        <div>$<?= $panier->selling_price; ?></div>
+                                                    </div>
                                                 </div>
-                                                <div>$12.22</div>
-                                            </div>
-                                        </div>
+                                            <?php endforeach; ?>
+                                        <?php } else { ?>
+                                            <p>there is no items</p>
+                                        <?php } ?>
                                         <div class="p-4 justify-center flex bg-slate-300">
                                             <a href="<?php echo URLROOT; ?>/Commandes/commandeDetails">
                                                 <button class="text-base  undefined  hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100  text-teal-700 border duration-200 ease-in-out border-teal-600 transition">Checkout $36.66</button>

@@ -10,11 +10,18 @@
                 <!-- sort select width text -->
                 <div class="sort flex gap-10 justify-end mb-8">
                     <div class=" flex items-center gap-2">
-                        <label for="sort">Sort By :</label>
-                        <select name="" id="sort" class="rounded py-1 px-2">
-                            <option value="Categorie">Catégorie</option>
-                            <option value="Prix">Prix</option>
-                        </select>
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-zinc-900 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">Sort By <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdown" class="z-20 hidden divide-y divide-gray-100 rounded-lg shadow w-44 bg-zinc-900">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="<?= URLROOT . '/Pages/ascend'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Prix</a>
+                            </li>
+                            <li>
+                                <a href="<?= URLROOT . '/Pages/descend'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Name </a>
+                            </li>
+                            </ul>
+                        </div>
                     </div>
                     <p>Showing 1-12 of 19 results</p>
                 </div>
@@ -25,7 +32,7 @@
                             <div class="product bg-purple-500 overflow-hidden rounded-lg relative after:content-['_'] after:absolute after:bg-gray-200 after:w-1/3 after:h-1/3 after:left-[-5%] after:top-1/2 after:translate-y-[-50%] after:rotate-45 after:rounded-lg after:opacity-20 before:absolute before:bg-gray-200 before:w-2/4 before:h-2/4 before:rounded-lg before:right-[-10%] before:top-1/3 before:translate-y-[-50%] before:rotate-45 before:opacity-20 cursor-pointer">
                                 <!-- product img -->
                                 <div class="relative z-10 w-full flex justify-center items-center h-52 p-2">
-                                    <img src="<?= URLROOT; ?>/img/product/desktop/d2.png" alt="" class="w-4/6 h-4/6">
+                                    <img src="<?= URLROOT; ?>/img/upload/<?= $product->image ?>" alt="" class="w-4/6 h-4/6">
                                 </div>
                                 <div class="bg-zinc-900 text-white flex justify-around py-4">
                                     <!-- product name -->

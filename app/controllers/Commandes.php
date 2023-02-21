@@ -17,8 +17,6 @@
             ];
             
             $this->view('allPages/panier', $data);
-            
-
         }
 
         public function removeComande($idCommande) {
@@ -33,10 +31,11 @@
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $products = $_POST['products'];
                 $quantity = $_POST['quantity'];
-                
+                $total = $this->commandeModel->totalPrice();
                 $data = [
                     'id_client' => $_SESSION['id'],
                     'creation_date' => date('d-m-y'),
+                    'total_price' => $total->price
                 ];
                 $idCommande = $this->commandeModel->createCommande($data);
                 if ($idCommande) {
@@ -46,11 +45,11 @@
                             'id_commande' => $idCommande,
                             'quantite' => $quantity[$i],
                         ];
-
                         $this->commandeModel->addProductCommande($data);
                     }
                     if ($this->commandeModel->finishCommande()) {
-                        redirect('commandes/commandesDetails');
+                        $this->commandeModel->clearPanier();
+                        redirect('commandes/commandeDetails');
                     } else {
                         die('SOMETHING WRONG ???');
                     }

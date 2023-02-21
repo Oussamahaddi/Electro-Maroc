@@ -83,21 +83,21 @@
                         </div>
 
                         <div class="py-12 bg-white">
-                            <form action="<?= URLROOT . '/commandes/sendCommande' ?>" method="POST">
+                            <form action="<?= URLROOT . '/Commandes/sendCommande' ?>" method="POST">
                                 <div class="max-w-lg px-4 mx-auto lg:px-8 grid gap-8">
                                     <div>
                                         <h3 class="font-bold text-2xl">Summary</h3>
                                         <p class="font-semibold ">total iteam costs : </p>
                                         <div class="flex flex-col items-center w-full">
-                                            <?php foreach ($data['commandes'] as $commande) : ?>
-                                                <p> $<?= $commande->selling_price ?> qty x <?= $commande->quantite ?> </p> <br>
-                                                <input type="text" name="products[]" value="<?= $commande->id_p ?>" id="" hidden>
-                                                <input type="text" name="quantity[]" value="<?= $commande->quantite ?>" id="" hidden>
+                                            <?php foreach ($data['commandes'] as $panier) : ?>
+                                                <p> $<?= $panier->selling_price ?> qty x <?= $panier->quantite ?> </p> <br>
+                                                <input type="text" name="products[]" value="<?= $panier->id_p ?>" id="" hidden>
+                                                <input type="text" name="quantity[]" value="<?= $panier->quantite ?>" id="quantite" hidden>
                                             <?php endforeach ?>
                                         </div>
                                         <hr>
                                         <div class="my-price">
-                                            <p>total : <?php foreach($data['commandes'] as $commandeP) {  }  ?></p>
+                                            <p>total : </p>
                                         </div>
                                     </div>
                                     <div class="">
@@ -110,6 +110,10 @@
                 <?php } ?>
         </div>
     </section>
+
+    <script>
+
+    </script>
 
 <?php
     include_once APPROOT . '/views/inc/footer.php';

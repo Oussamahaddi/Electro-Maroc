@@ -33,8 +33,10 @@
 
         public function createCommande($data) {
             $this->db->beginTransaction();
-            $this->db->query("INSERT INTO `commande`(`id_client`) VALUES (:id_c)");
+            $this->db->query("INSERT INTO `commande`(`id_client` , `creation_date` , total_price_commande) VALUES (:id_c, :date, :total_price)");
             $this->db->bind(':id_c', $data['id_client']);
+            $this->db->bind(':date', $data['creation_date']);
+            $this->db->bind(':total_price', $data['total_price']);
             $this->db->execute();
             return $this->db->lastInserId();
         }
@@ -52,7 +54,18 @@
         }
 
         public function finishCommande() {
-            $this->db->commit();
+            return $this->db->commit();
+        }
+
+        public function totalPrice() {
+            $this->db->query("SELECT SUM(p.selling_price * pc.quantite) as price FROM product_commande pc JOIN product p ON p.id_p = pc.id_product JOIN commande c ON c.id = pc.id_commande GROUP BY id_commande");
+            $row = $this->db->single();
+            return $row;
+        }
+
+        public function clearPanier() {
+            $this->db->query("DELETE FROM panier");
+            $this->db->execute();
         }
 
     }

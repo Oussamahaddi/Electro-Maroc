@@ -13,17 +13,24 @@
         }
 
         public function index() {
-            $this->view('allPages/index');
+            $commandeCheck = $this->commandeModel->getAllCommande();
+            $data = [
+                'commandes' => $commandeCheck,
+            ];
+            $this->view('allPages/index', $data);
         }
         public function shop($idCategorie = null) {
             $allProduct = $this->productModel->getAllProduct();
             $allCategorie = $this->categorieModel->getAllCatgories();
             $selectedCategorie = $this->categorieModel->filterByCategorie($idCategorie);
 
+            $commandeCheck = $this->commandeModel->getAllCommande();
+
             $data = [
                 'products' => $allProduct,
                 'categories' => $allCategorie,
                 'select_by_categorie' => $selectedCategorie,
+                'commandes' => $commandeCheck,
             ];
 
             $this->view('allPages/shop', $data);
@@ -32,28 +39,46 @@
             $allCategorie = $this->categorieModel->getAllCatgories();
             $selectedCategorie = $this->categorieModel->filterByCategorie($idCategorie);
 
+            $commandeCheck = $this->commandeModel->getAllCommande();
+
             $data = [
                 'categories' => $allCategorie,
                 'select_by_categorie' => $selectedCategorie,
+                'commandes' => $commandeCheck
             ];
 
             $this->view('allPages/category', $data);
         }
         public function contact() {
-            $this->view('allPages/contact');
+            $commandeCheck = $this->commandeModel->getAllCommande();
+            $data = ['commandes' => $commandeCheck];
+            $this->view('allPages/contact', $data);
         }
 
-        public function ascend() {
+        public function ascend($idCategorie = null) {
+            $allCategorie = $this->categorieModel->getAllCatgories();
+            $selectedCategorie = $this->categorieModel->filterByCategorie($idCategorie);
             $asc = $this->productModel->getProductAsc();
+            $commandeCheck = $this->commandeModel->getAllCommande();
+
             $data = [
-                'products_asc' => $asc
+                'categories' => $allCategorie,
+                'select_by_categorie' => $selectedCategorie,
+                'products' => $asc,
+                'commandes' => $commandeCheck
             ];
             $this->view('allPages/shop', $data);
         }
-        public function descend() {
-            $desc = $this->productModel->getProductDes();
+        public function descend($idCategorie = null) {
+            $allCategorie = $this->categorieModel->getAllCatgories();
+            $selectedCategorie = $this->categorieModel->filterByCategorie($idCategorie);
+            $commandeCheck = $this->commandeModel->getAllCommande();
+            $desc = $this->productModel->getProductName();
             $data = [
-                'products_asc' => $desc
+                'categories' => $allCategorie,
+                'select_by_categorie' => $selectedCategorie,
+                'products' => $desc,
+                'commandes' => $commandeCheck
             ];
             $this->view('allPages/shop', $data);
         }

@@ -85,4 +85,14 @@
             }
         }
 
+        public function getProductName() {
+            $this->db->query("SELECT * FROM product ORDER BY libelle ASC");
+            $row = $this->db->resultSet();
+            if ($this->db->rowCount() > 0) {
+                return $row;
+            } else {
+                return false;
+            }
+        }
+
     }

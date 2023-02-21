@@ -19,7 +19,7 @@ print_r($data['select_by_categorie']);
                                 <a href="<?= URLROOT . '/Pages/ascend'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Prix</a>
                             </li>
                             <li>
-                                <a href="<?= URLROOT . '/Pages/ascend'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Name </a>
+                                <a href="<?= URLROOT . '/Pages/descend'; ?>" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Name </a>
                             </li>
                             </ul>
                         </div>
